@@ -6,11 +6,11 @@ const LEGACY_STORAGE_KEYS = ["gastos-eva-v2", "gastos-eva-v1"];
 
 const CATEGORIES = {
   expense: [
-    ["Comida", "🍽️"], ["Casa", "🏠"], ["Transporte", "🚗"], ["Ocio", "🎉"],
-    ["Compras", "🛍️"], ["Salud", "💊"], ["Recibos", "🧾"], ["Otros", "📌"]
+      ["Comida", "🍽️"], ["Casa", "🏠"], ["Transporte", "🚗"], ["Ocio", "🎉"], ["♡D♡", "💕"],
+    ["Compras", "🛍️"], ["Salud", "💊"], ["Recibos", "🧾"], ["Regalos", "🎁"], ["Estudios", "📚"], ["Viajes", "✈️"]
   ],
   income: [
-    ["Nómina", "💼"], ["Transferencia", "🏦"], ["Venta", "🏷️"],
+    ["Nómina", "💼"], ["Bizum", "🏦"], ["Venta", "🏷️"],
     ["Reembolso", "↩️"], ["Regalo", "🎁"], ["Otros ingresos", "💶"]
   ]
 };

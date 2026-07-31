@@ -4,7 +4,7 @@ const OLD_STORAGE_KEY = "gastos-eva-v1";
 const CATEGORIES = {
   expense: [
     ["Comida", "🍽️"], ["Casa", "🏠"], ["Transporte", "🚗"], ["Ocio", "🎉"], ["♡D♡", "💕"],
-    ["Compras", "🛍️"], ["Salud", "💊"], ["Recibos", "🧾"], ["Regalos", "📌"], ["Estudios", "📚"], ["Viajes", "✈️"]
+    ["Compras", "🛍️"], ["Salud", "💊"], ["Recibos", "🧾"], ["Regalos", "🎁"], ["Estudios", "📚"], ["Viajes", "✈️"]
   ],
   income: [
     ["Nómina", "💼"], ["Bizum", "🏦"], ["Venta", "🏷️"],

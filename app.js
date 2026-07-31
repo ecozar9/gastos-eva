@@ -1,13 +1,16 @@
-const STORAGE_KEY = "gastos-eva-v2";
-const OLD_STORAGE_KEY = "gastos-eva-v1";
+// IMPORTANTE: esta clave debe mantenerse igual en todas las futuras versiones.
+// Cambiarla haría que la app pareciera vacía aunque los datos siguieran guardados.
+const STORAGE_KEY = "gastos-eva-data";
+const BACKUP_STORAGE_KEY = "gastos-eva-data-backup";
+const LEGACY_STORAGE_KEYS = ["gastos-eva-v2", "gastos-eva-v1"];
 
 const CATEGORIES = {
   expense: [
-    ["Comida", "🍽️"], ["Casa", "🏠"], ["Transporte", "🚗"], ["Ocio", "🎉"], ["♡D♡", "💕"],
-    ["Compras", "🛍️"], ["Salud", "💊"], ["Recibos", "🧾"], ["Regalos", "🎁"], ["Estudios", "📚"], ["Viajes", "✈️"]
+    ["Comida", "🍽️"], ["Casa", "🏠"], ["Transporte", "🚗"], ["Ocio", "🎉"],
+    ["Compras", "🛍️"], ["Salud", "💊"], ["Recibos", "🧾"], ["Otros", "📌"]
   ],
   income: [
-    ["Nómina", "💼"], ["Bizum", "🏦"], ["Venta", "🏷️"],
+    ["Nómina", "💼"], ["Transferencia", "🏦"], ["Venta", "🏷️"],
     ["Reembolso", "↩️"], ["Regalo", "🎁"], ["Otros ingresos", "💶"]
   ]
 };
@@ -45,21 +48,62 @@ function normalizeMovement(item) {
   };
 }
 
-function loadMovements() {
+function readStoredArray(key) {
   try {
-    const current = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
-    if (Array.isArray(current)) return current.map(normalizeMovement).filter(Boolean);
-    const old = JSON.parse(localStorage.getItem(OLD_STORAGE_KEY) || "[]");
-    if (Array.isArray(old) && old.length) {
-      const migrated = old.map(normalizeMovement).filter(Boolean);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(migrated));
-      return migrated;
-    }
-  } catch {}
+    const value = JSON.parse(localStorage.getItem(key) || "null");
+    return Array.isArray(value) ? value : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveStoredMovements(movements) {
+  const serialized = JSON.stringify(movements);
+  localStorage.setItem(STORAGE_KEY, serialized);
+  localStorage.setItem(BACKUP_STORAGE_KEY, serialized);
+}
+
+function loadMovements() {
+  // 1. Usa siempre la clave estable de esta versión y de las futuras.
+  const current = readStoredArray(STORAGE_KEY);
+  if (current !== null) return current.map(normalizeMovement).filter(Boolean);
+
+  // 2. Si la principal falta o está dañada, recupera la autocopia local.
+  const backup = readStoredArray(BACKUP_STORAGE_KEY);
+  if (backup !== null) {
+    const recovered = backup.map(normalizeMovement).filter(Boolean);
+    try { saveStoredMovements(recovered); } catch {}
+    return recovered;
+  }
+
+  // 3. Recupera y combina automáticamente los datos de todas las versiones antiguas.
+  const legacyItems = LEGACY_STORAGE_KEYS.flatMap(key => readStoredArray(key) || []);
+  if (legacyItems.length) {
+    const seenIds = new Set();
+    const migrated = legacyItems
+      .map(normalizeMovement)
+      .filter(Boolean)
+      .filter(item => {
+        if (seenIds.has(item.id)) return false;
+        seenIds.add(item.id);
+        return true;
+      });
+    try { saveStoredMovements(migrated); } catch {}
+    return migrated;
+  }
+
   return [];
 }
 
-function persistMovements() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state.movements)); }
+function persistMovements() {
+  try {
+    saveStoredMovements(state.movements);
+    return true;
+  } catch {
+    showToast("No se han podido guardar los datos");
+    return false;
+  }
+}
 function todayISO() { const d=new Date(); return new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10); }
 function currentMonth() { return todayISO().slice(0,7); }
 function formatMoney(v) { return new Intl.NumberFormat("es-ES",{style:"currency",currency:"EUR"}).format(v); }
@@ -214,7 +258,10 @@ async function importBackup(file) {
 function clearAllData() {
   if(!state.movements.length){showToast("No hay datos para borrar");return;}
   if(!confirm("¿Seguro que quieres borrar todos los gastos e ingresos?"))return;
-  state.movements=[];persistMovements();resetForm();renderSummary();renderHistory();showView("summary");showToast("Todos los datos se han borrado");
+  state.movements=[];
+  persistMovements();
+  LEGACY_STORAGE_KEYS.forEach(key=>localStorage.setItem(key,"[]"));
+  resetForm();renderSummary();renderHistory();showView("summary");showToast("Todos los datos se han borrado");
 }
 
 let toastTimer;

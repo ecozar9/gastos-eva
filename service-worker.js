@@ -1,4 +1,4 @@
-const CACHE_NAME="gastos-eva-cache-v3";
+const CACHE_NAME="gastos-eva-cache-v4";
 const FILES=["./","./index.html","./style.css","./app.js","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./icons/icon-512-maskable.png"];
 self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(FILES)));self.skipWaiting();});
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))));self.clients.claim();});

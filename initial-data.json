@@ -1,0 +1,3258 @@
+{
+  "app": "Mis finanzas",
+  "source": "Extracto bancario del 3 de mayo al 31 de julio de 2026",
+  "version": 1,
+  "generatedAt": "2026-07-31T17:30:00+02:00",
+  "movementCount": 361,
+  "movements": [
+    {
+      "id": "bank-6747b1a53cbb689c",
+      "type": "expense",
+      "amount": 31.36,
+      "category": "Recibos",
+      "date": "2026-07-31",
+      "note": "Viva Aqua Service",
+      "createdAt": "2026-07-31T12:00:00.000Z"
+    },
+    {
+      "id": "bank-b283a7427da4b088",
+      "type": "income",
+      "amount": 200.0,
+      "category": "Bizum",
+      "date": "2026-07-30",
+      "note": "Bizum de Francisca Pavon Berlanga - Bizum De Francisca",
+      "createdAt": "2026-07-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a0438da2c6138688",
+      "type": "expense",
+      "amount": 7.0,
+      "category": "Comida",
+      "date": "2026-07-30",
+      "note": "Sucre Magic",
+      "createdAt": "2026-07-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-936e8e603d006fbd",
+      "type": "income",
+      "amount": 1889.43,
+      "category": "Nómina",
+      "date": "2026-07-30",
+      "note": "Nómina Acciona Comercial B2C",
+      "createdAt": "2026-07-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-49b74859c8302a89",
+      "type": "expense",
+      "amount": 129.8,
+      "category": "Compras",
+      "date": "2026-07-30",
+      "note": "Lily Gems",
+      "createdAt": "2026-07-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-c28ccaff66fad52e",
+      "type": "expense",
+      "amount": 21.0,
+      "category": "Regalos",
+      "date": "2026-07-30",
+      "note": "Primark Barca- Cornell",
+      "createdAt": "2026-07-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d4b44f958bb8705f",
+      "type": "income",
+      "amount": 25.37,
+      "category": "Bizum",
+      "date": "2026-07-30",
+      "note": "Bizum de Isaac Furio Martin - Tumaca",
+      "createdAt": "2026-07-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f5883c51aeeb2e1f",
+      "type": "income",
+      "amount": 27.86,
+      "category": "Bizum",
+      "date": "2026-07-30",
+      "note": "Bizum de Alejandro Aguero Perez - Pizzeria",
+      "createdAt": "2026-07-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-07a62bda65dbbe3a",
+      "type": "income",
+      "amount": 20.0,
+      "category": "Bizum",
+      "date": "2026-07-30",
+      "note": "Bizum de David Gomez Pardo Martinez - Pizza",
+      "createdAt": "2026-07-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-377adf5da0c9bb3d",
+      "type": "expense",
+      "amount": 104.25,
+      "category": "Comida",
+      "date": "2026-07-30",
+      "note": "Mamma Mia Vilan",
+      "createdAt": "2026-07-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-979004ad417cd8d8",
+      "type": "expense",
+      "amount": 84.66,
+      "category": "Compras",
+      "date": "2026-07-29",
+      "note": "Accura Bruc",
+      "createdAt": "2026-07-29T12:00:00.000Z"
+    },
+    {
+      "id": "bank-cdfa85e1f96bfd5b",
+      "type": "expense",
+      "amount": 30.65,
+      "category": "Comida",
+      "date": "2026-07-28",
+      "note": "Pai Mei",
+      "createdAt": "2026-07-28T12:00:00.000Z"
+    },
+    {
+      "id": "bank-c2a59c4993c16c87",
+      "type": "expense",
+      "amount": 48.97,
+      "category": "Compras",
+      "date": "2026-07-28",
+      "note": "Stradivarius",
+      "createdAt": "2026-07-28T12:00:00.000Z"
+    },
+    {
+      "id": "bank-3935e0c55cc519a5",
+      "type": "expense",
+      "amount": 6.99,
+      "category": "Compras",
+      "date": "2026-07-28",
+      "note": "Bershka",
+      "createdAt": "2026-07-28T12:00:00.000Z"
+    },
+    {
+      "id": "bank-154d0a0e7b3d3c65",
+      "type": "expense",
+      "amount": 42.93,
+      "category": "Compras",
+      "date": "2026-07-28",
+      "note": "Lefties",
+      "createdAt": "2026-07-28T12:00:00.000Z"
+    },
+    {
+      "id": "bank-99590e2e2eb551ae",
+      "type": "expense",
+      "amount": 8.7,
+      "category": "Comida",
+      "date": "2026-07-28",
+      "note": "Mercadona Merca",
+      "createdAt": "2026-07-28T12:00:00.000Z"
+    },
+    {
+      "id": "bank-ea2a88acc8b77544",
+      "type": "expense",
+      "amount": 10.99,
+      "category": "Recibos",
+      "date": "2026-07-28",
+      "note": "PayPal",
+      "createdAt": "2026-07-28T12:00:00.000Z"
+    },
+    {
+      "id": "bank-727a4c71841d98ec",
+      "type": "expense",
+      "amount": 70.63,
+      "category": "Comida",
+      "date": "2026-07-27",
+      "note": "Bonarea Car Pay",
+      "createdAt": "2026-07-27T12:00:00.000Z"
+    },
+    {
+      "id": "bank-67c34d6812f7e91c",
+      "type": "expense",
+      "amount": 2.0,
+      "category": "Comida",
+      "date": "2026-07-27",
+      "note": "Bonarea Car Pay",
+      "createdAt": "2026-07-27T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d872fa6f70a36efa",
+      "type": "expense",
+      "amount": 3.3,
+      "category": "Compras",
+      "date": "2026-07-27",
+      "note": "La Farga Shoppi",
+      "createdAt": "2026-07-27T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d698d276b62e5c13",
+      "type": "expense",
+      "amount": 8.93,
+      "category": "Comida",
+      "date": "2026-07-27",
+      "note": "Caprabo 415 La",
+      "createdAt": "2026-07-27T12:00:00.000Z"
+    },
+    {
+      "id": "bank-ca8466c5ae00edf6",
+      "type": "expense",
+      "amount": 1.9,
+      "category": "Comida",
+      "date": "2026-07-27",
+      "note": "Bar Can Ros",
+      "createdAt": "2026-07-27T12:00:00.000Z"
+    },
+    {
+      "id": "bank-4fa4c18c17a4a5af",
+      "type": "expense",
+      "amount": 4.5,
+      "category": "Compras",
+      "date": "2026-07-26",
+      "note": "El Taller - For",
+      "createdAt": "2026-07-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a4c8f969c979e2f2",
+      "type": "expense",
+      "amount": 4.5,
+      "category": "Comida",
+      "date": "2026-07-25",
+      "note": "Aldi Hospitalet",
+      "createdAt": "2026-07-25T12:00:00.000Z"
+    },
+    {
+      "id": "bank-677b25197ed5c8fd",
+      "type": "expense",
+      "amount": 8.5,
+      "category": "Comida",
+      "date": "2026-07-25",
+      "note": "Sucre Magic",
+      "createdAt": "2026-07-25T12:00:00.000Z"
+    },
+    {
+      "id": "bank-74b2d6360c894036",
+      "type": "expense",
+      "amount": 15.13,
+      "category": "Comida",
+      "date": "2026-07-23",
+      "note": "Uber * Eats Pending",
+      "createdAt": "2026-07-23T12:00:00.000Z"
+    },
+    {
+      "id": "bank-22ca5466bda56150",
+      "type": "income",
+      "amount": 24.99,
+      "category": "Otros ingresos",
+      "date": "2026-07-23",
+      "note": "Bonificación bancaria",
+      "createdAt": "2026-07-23T12:00:00.000Z"
+    },
+    {
+      "id": "bank-4acbf101addce8b6",
+      "type": "expense",
+      "amount": 33.99,
+      "category": "Recibos",
+      "date": "2026-07-22",
+      "note": "Renting Tec.",
+      "createdAt": "2026-07-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-b5b9b3f0872090fe",
+      "type": "expense",
+      "amount": 2.9,
+      "category": "Compras",
+      "date": "2026-07-22",
+      "note": "K And Sones",
+      "createdAt": "2026-07-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-67a700141fda3e74",
+      "type": "expense",
+      "amount": 16.43,
+      "category": "Salud",
+      "date": "2026-07-22",
+      "note": "Farmacia Roger",
+      "createdAt": "2026-07-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-9c62d199a297f016",
+      "type": "expense",
+      "amount": 6.1,
+      "category": "Compras",
+      "date": "2026-07-22",
+      "note": "Normal Esplugue",
+      "createdAt": "2026-07-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f70d6b325d4bdcfa",
+      "type": "expense",
+      "amount": 12.95,
+      "category": "Comida",
+      "date": "2026-07-22",
+      "note": "El Rincon De Be",
+      "createdAt": "2026-07-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-ee67d21394225333",
+      "type": "expense",
+      "amount": 2.6,
+      "category": "Compras",
+      "date": "2026-07-21",
+      "note": "Sumup *narbona Natura",
+      "createdAt": "2026-07-21T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f7c3fc7e089eab62",
+      "type": "expense",
+      "amount": 9.85,
+      "category": "Compras",
+      "date": "2026-07-20",
+      "note": "Basar Shang Hai",
+      "createdAt": "2026-07-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-da910c270881b4da",
+      "type": "expense",
+      "amount": 16.28,
+      "category": "Comida",
+      "date": "2026-07-20",
+      "note": "Uber * Eats Pending",
+      "createdAt": "2026-07-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-eb2cd96755057772",
+      "type": "expense",
+      "amount": 14.48,
+      "category": "Comida",
+      "date": "2026-07-20",
+      "note": "Mcdonalds 72400123",
+      "createdAt": "2026-07-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-b2f4508180f0238b",
+      "type": "expense",
+      "amount": 3.75,
+      "category": "Comida",
+      "date": "2026-07-20",
+      "note": "Mercadona Merca",
+      "createdAt": "2026-07-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-da381ffa607e90ba",
+      "type": "expense",
+      "amount": 14.7,
+      "category": "Ocio",
+      "date": "2026-07-19",
+      "note": "Bizum a Yeray Cortes Garcia - Tribal",
+      "createdAt": "2026-07-19T12:00:00.000Z"
+    },
+    {
+      "id": "bank-45b9cdc5b9ea17d3",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "Comida",
+      "date": "2026-07-17",
+      "note": "Asian Ways",
+      "createdAt": "2026-07-17T12:00:00.000Z"
+    },
+    {
+      "id": "bank-1dc37bcc60f1dd5b",
+      "type": "expense",
+      "amount": 2.0,
+      "category": "Compras",
+      "date": "2026-07-17",
+      "note": "Bizum a Isaac Furio Martin - Sin Concepto",
+      "createdAt": "2026-07-17T12:00:00.000Z"
+    },
+    {
+      "id": "bank-be9b6d3663762d81",
+      "type": "expense",
+      "amount": 4.0,
+      "category": "Ocio",
+      "date": "2026-07-17",
+      "note": "Afterlife",
+      "createdAt": "2026-07-17T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6ca0dd11b206356c",
+      "type": "expense",
+      "amount": 0.8,
+      "category": "Comida",
+      "date": "2026-07-17",
+      "note": "Supermercat Ali",
+      "createdAt": "2026-07-17T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d4141147bf02e402",
+      "type": "expense",
+      "amount": 2.69,
+      "category": "Transporte",
+      "date": "2026-07-17",
+      "note": "Aucat Sal Ac Cubelles",
+      "createdAt": "2026-07-17T12:00:00.000Z"
+    },
+    {
+      "id": "bank-945e9409d60f7d56",
+      "type": "expense",
+      "amount": 8.42,
+      "category": "Transporte",
+      "date": "2026-07-17",
+      "note": "Aucat Bar Vallcarca N",
+      "createdAt": "2026-07-17T12:00:00.000Z"
+    },
+    {
+      "id": "bank-16f9ed671b76a17f",
+      "type": "expense",
+      "amount": 4.5,
+      "category": "Transporte",
+      "date": "2026-07-17",
+      "note": "Ajuntament L Ho",
+      "createdAt": "2026-07-17T12:00:00.000Z"
+    },
+    {
+      "id": "bank-5e4154fc708a113f",
+      "type": "expense",
+      "amount": 3.2,
+      "category": "Comida",
+      "date": "2026-07-16",
+      "note": "Mercadona Merca",
+      "createdAt": "2026-07-16T12:00:00.000Z"
+    },
+    {
+      "id": "bank-29320d798de7da9c",
+      "type": "expense",
+      "amount": 10.04,
+      "category": "Comida",
+      "date": "2026-07-16",
+      "note": "Aldi Hospitalet",
+      "createdAt": "2026-07-16T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f7632d6eb732ce24",
+      "type": "expense",
+      "amount": 119.1,
+      "category": "Compras",
+      "date": "2026-07-16",
+      "note": "Sumup *narbona Natura",
+      "createdAt": "2026-07-16T12:00:00.000Z"
+    },
+    {
+      "id": "bank-b3ee5969a225699b",
+      "type": "expense",
+      "amount": 1.29,
+      "category": "Comida",
+      "date": "2026-07-15",
+      "note": "Aldi Hospitalet",
+      "createdAt": "2026-07-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-5fb593cd1b6c9489",
+      "type": "income",
+      "amount": 26.48,
+      "category": "Bizum",
+      "date": "2026-07-15",
+      "note": "Bizum de Guillermo Galindo Guerrero - Cena Guille Sandra",
+      "createdAt": "2026-07-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2d65479201c47d63",
+      "type": "income",
+      "amount": 8.0,
+      "category": "Bizum",
+      "date": "2026-07-15",
+      "note": "Bizum de Joan Cebrian Gimenez - Comida",
+      "createdAt": "2026-07-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-e07e2772aede5c72",
+      "type": "income",
+      "amount": 13.25,
+      "category": "Bizum",
+      "date": "2026-07-15",
+      "note": "Bizum de David Dominguez Escribano - Bizum De David",
+      "createdAt": "2026-07-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6da938ac81e62e8e",
+      "type": "income",
+      "amount": 26.48,
+      "category": "Bizum",
+      "date": "2026-07-14",
+      "note": "Bizum de Yeray Cortes Garcia - Cena Tribal",
+      "createdAt": "2026-07-14T12:00:00.000Z"
+    },
+    {
+      "id": "bank-5a8784de8421ac52",
+      "type": "income",
+      "amount": 26.48,
+      "category": "Bizum",
+      "date": "2026-07-14",
+      "note": "Bizum de Mireia Garcia Perea - Bizum De Mireia",
+      "createdAt": "2026-07-14T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6cdabbd2248b3143",
+      "type": "income",
+      "amount": 13.24,
+      "category": "Bizum",
+      "date": "2026-07-14",
+      "note": "Bizum de Noelia Hervas Alvarez - Bizum De Noelia",
+      "createdAt": "2026-07-14T12:00:00.000Z"
+    },
+    {
+      "id": "bank-1ad90228f2b90f5b",
+      "type": "expense",
+      "amount": 2.69,
+      "category": "Transporte",
+      "date": "2026-07-14",
+      "note": "Aucat Ent Ac Cubelles",
+      "createdAt": "2026-07-14T12:00:00.000Z"
+    },
+    {
+      "id": "bank-9e82275fa16b6666",
+      "type": "expense",
+      "amount": 51.5,
+      "category": "Compras",
+      "date": "2026-07-13",
+      "note": "Undecimo",
+      "createdAt": "2026-07-13T12:00:00.000Z"
+    },
+    {
+      "id": "bank-b05fee44f36e2bb5",
+      "type": "expense",
+      "amount": 12.0,
+      "category": "Regalos",
+      "date": "2026-07-13",
+      "note": "Primark San Cugat",
+      "createdAt": "2026-07-13T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f3cd0568ab5ad82e",
+      "type": "expense",
+      "amount": 2.69,
+      "category": "Comida",
+      "date": "2026-07-13",
+      "note": "Bizum a Joan Cebrian Gimenez - Lasaña",
+      "createdAt": "2026-07-13T12:00:00.000Z"
+    },
+    {
+      "id": "bank-b6c95a9136e00e9a",
+      "type": "expense",
+      "amount": 3.33,
+      "category": "Compras",
+      "date": "2026-07-12",
+      "note": "Bizum a Mireia Garcia Perea - Sin Concepto",
+      "createdAt": "2026-07-12T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d7423289e28b8fda",
+      "type": "expense",
+      "amount": 8.5,
+      "category": "Comida",
+      "date": "2026-07-12",
+      "note": "La Parada Del G",
+      "createdAt": "2026-07-12T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d1a93071b853eb96",
+      "type": "expense",
+      "amount": 1.5,
+      "category": "Comida",
+      "date": "2026-07-12",
+      "note": "La Parada Del G",
+      "createdAt": "2026-07-12T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a45f88ef4fc71ebc",
+      "type": "expense",
+      "amount": 6.0,
+      "category": "♡D♡",
+      "date": "2026-07-12",
+      "note": "Bizum a David Dominguez Escribano - Calvicie",
+      "createdAt": "2026-07-12T12:00:00.000Z"
+    },
+    {
+      "id": "bank-bb8da4e73e6d14e6",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "Viajes",
+      "date": "2026-07-12",
+      "note": "Tropical Salou",
+      "createdAt": "2026-07-12T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f7001a54fe9283ad",
+      "type": "expense",
+      "amount": 17.46,
+      "category": "Viajes",
+      "date": "2026-07-11",
+      "note": "Spar T158 Salou",
+      "createdAt": "2026-07-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-912f097f4528af9e",
+      "type": "expense",
+      "amount": 9.9,
+      "category": "Viajes",
+      "date": "2026-07-11",
+      "note": "Cafe Di Mare",
+      "createdAt": "2026-07-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-517e20eefe92ad0e",
+      "type": "expense",
+      "amount": 53.97,
+      "category": "Viajes",
+      "date": "2026-07-11",
+      "note": "Mostwanted",
+      "createdAt": "2026-07-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-53153f49111c25b0",
+      "type": "expense",
+      "amount": 74.95,
+      "category": "Viajes",
+      "date": "2026-07-11",
+      "note": "Ocean's Cambril",
+      "createdAt": "2026-07-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-76ec151d14f6c351",
+      "type": "expense",
+      "amount": 12.0,
+      "category": "Viajes",
+      "date": "2026-07-11",
+      "note": "Tropical Salou",
+      "createdAt": "2026-07-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f8181458a96ccd6f",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "Viajes",
+      "date": "2026-07-11",
+      "note": "Tropical Salou",
+      "createdAt": "2026-07-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-7dfc30921d53a4b8",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "Viajes",
+      "date": "2026-07-11",
+      "note": "Tropical Salou",
+      "createdAt": "2026-07-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-5da96b3e13f35234",
+      "type": "expense",
+      "amount": 7.0,
+      "category": "Viajes",
+      "date": "2026-07-10",
+      "note": "Luxury",
+      "createdAt": "2026-07-10T12:00:00.000Z"
+    },
+    {
+      "id": "bank-8b900f9dcb64d60b",
+      "type": "expense",
+      "amount": 54.0,
+      "category": "Compras",
+      "date": "2026-07-10",
+      "note": "Www.amazon* Eb6wa7sz5",
+      "createdAt": "2026-07-10T12:00:00.000Z"
+    },
+    {
+      "id": "bank-849a3823c29f8e52",
+      "type": "expense",
+      "amount": 57.49,
+      "category": "Compras",
+      "date": "2026-07-10",
+      "note": "Es Llobregat",
+      "createdAt": "2026-07-10T12:00:00.000Z"
+    },
+    {
+      "id": "bank-c900ea17a461e42c",
+      "type": "expense",
+      "amount": 3.5,
+      "category": "Comida",
+      "date": "2026-07-10",
+      "note": "Bizum a Biel Ribas Navarro - Cacaulat",
+      "createdAt": "2026-07-10T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f864f300d47dfe33",
+      "type": "expense",
+      "amount": 49.85,
+      "category": "Recibos",
+      "date": "2026-07-10",
+      "note": "Amazon Pay",
+      "createdAt": "2026-07-10T12:00:00.000Z"
+    },
+    {
+      "id": "bank-8f5b074af14efdbb",
+      "type": "expense",
+      "amount": 2.5,
+      "category": "Comida",
+      "date": "2026-07-09",
+      "note": "Bizum a Ernest Manel Catalan Nebot - Fuzetea",
+      "createdAt": "2026-07-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-96ab9f14ad191b68",
+      "type": "expense",
+      "amount": 17.97,
+      "category": "Compras",
+      "date": "2026-07-09",
+      "note": "Pull And Bear",
+      "createdAt": "2026-07-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-de5991ce8d4b09c7",
+      "type": "expense",
+      "amount": 16.02,
+      "category": "Comida",
+      "date": "2026-07-09",
+      "note": "Uber * Eats Pending",
+      "createdAt": "2026-07-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-5d9566fe433981b6",
+      "type": "income",
+      "amount": 1.66,
+      "category": "Bizum",
+      "date": "2026-07-09",
+      "note": "Bizum de Jorge De Egea Lopez - Me",
+      "createdAt": "2026-07-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-3964a6103f377c4a",
+      "type": "income",
+      "amount": 7.42,
+      "category": "Bizum",
+      "date": "2026-07-09",
+      "note": "Bizum de Biel Ribas Navarro - Sin Concepto",
+      "createdAt": "2026-07-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-de28090e9a57424d",
+      "type": "expense",
+      "amount": 22.62,
+      "category": "Comida",
+      "date": "2026-07-09",
+      "note": "Gumen Catering",
+      "createdAt": "2026-07-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-07fe070441bae3fa",
+      "type": "income",
+      "amount": 7.54,
+      "category": "Bizum",
+      "date": "2026-07-09",
+      "note": "Bizum de Joan Cebrian Gimenez - Comida",
+      "createdAt": "2026-07-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-5ed4225714b3470f",
+      "type": "income",
+      "amount": 2.0,
+      "category": "Bizum",
+      "date": "2026-07-08",
+      "note": "Bizum de Joan Cebrian Gimenez - Eu Quero Un Bocadillo De Mortadela",
+      "createdAt": "2026-07-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-1aeb14fcd7f36a99",
+      "type": "income",
+      "amount": 1.66,
+      "category": "Bizum",
+      "date": "2026-07-08",
+      "note": "Bizum de Noelia Hervas Alvarez - Iclou",
+      "createdAt": "2026-07-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d06e6116e33ccb03",
+      "type": "income",
+      "amount": 1.66,
+      "category": "Bizum",
+      "date": "2026-07-08",
+      "note": "Bizum de Naira Castro Millan - Icloud",
+      "createdAt": "2026-07-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2c18a7a7faa27727",
+      "type": "income",
+      "amount": 90.0,
+      "category": "Bizum",
+      "date": "2026-07-08",
+      "note": "Bizum de Francisca Pavon Berlanga - Bizum De Francisca",
+      "createdAt": "2026-07-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-cd75163a94c5e832",
+      "type": "expense",
+      "amount": 3.3,
+      "category": "Comida",
+      "date": "2026-07-08",
+      "note": "Bizum a Biel Ribas Navarro - Canelones Buuu",
+      "createdAt": "2026-07-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-dc8fef0e966a2291",
+      "type": "expense",
+      "amount": 8.99,
+      "category": "Recibos",
+      "date": "2026-07-08",
+      "note": "PayPal",
+      "createdAt": "2026-07-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d4ab76d6ba98bc70",
+      "type": "expense",
+      "amount": 5.99,
+      "category": "Recibos",
+      "date": "2026-07-08",
+      "note": "PayPal",
+      "createdAt": "2026-07-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-ee0ebcfe19ebf3b3",
+      "type": "expense",
+      "amount": 33.0,
+      "category": "Comida",
+      "date": "2026-07-07",
+      "note": "Pizzeria Sapri",
+      "createdAt": "2026-07-07T12:00:00.000Z"
+    },
+    {
+      "id": "bank-3ccaa38b178dc928",
+      "type": "expense",
+      "amount": 4.15,
+      "category": "Comida",
+      "date": "2026-07-07",
+      "note": "365 T-152",
+      "createdAt": "2026-07-07T12:00:00.000Z"
+    },
+    {
+      "id": "bank-ffe7cfe5e213153c",
+      "type": "expense",
+      "amount": 2.05,
+      "category": "Comida",
+      "date": "2026-07-07",
+      "note": "Charter Consum",
+      "createdAt": "2026-07-07T12:00:00.000Z"
+    },
+    {
+      "id": "bank-fe02b835670cd8ad",
+      "type": "expense",
+      "amount": 31.36,
+      "category": "Recibos",
+      "date": "2026-07-07",
+      "note": "Viva Aqua Service",
+      "createdAt": "2026-07-07T12:00:00.000Z"
+    },
+    {
+      "id": "bank-7896f12ce0abd0cd",
+      "type": "income",
+      "amount": 45.0,
+      "category": "Bizum",
+      "date": "2026-07-06",
+      "note": "Bizum de Eric Faneca Abril - Voski",
+      "createdAt": "2026-07-06T12:00:00.000Z"
+    },
+    {
+      "id": "bank-38cf8117f2b48a84",
+      "type": "expense",
+      "amount": 85.8,
+      "category": "Ocio",
+      "date": "2026-07-06",
+      "note": "Horrorland",
+      "createdAt": "2026-07-06T12:00:00.000Z"
+    },
+    {
+      "id": "bank-8590a65b9b2a7ce6",
+      "type": "expense",
+      "amount": 4.99,
+      "category": "Recibos",
+      "date": "2026-07-06",
+      "note": "Uber *one Membership",
+      "createdAt": "2026-07-06T12:00:00.000Z"
+    },
+    {
+      "id": "bank-ed610f5140701d40",
+      "type": "expense",
+      "amount": 9.99,
+      "category": "Recibos",
+      "date": "2026-07-06",
+      "note": "Apple.com/bill",
+      "createdAt": "2026-07-06T12:00:00.000Z"
+    },
+    {
+      "id": "bank-4418a7db3f4c44ea",
+      "type": "income",
+      "amount": 35.0,
+      "category": "Reembolso",
+      "date": "2026-07-06",
+      "note": "Devolución Apple.com/bill",
+      "createdAt": "2026-07-06T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a7dc3c5f60b3eb6a",
+      "type": "income",
+      "amount": 120.0,
+      "category": "Bizum",
+      "date": "2026-07-06",
+      "note": "Bizum de Francisca Pavon Berlanga - Bizum De Francisca",
+      "createdAt": "2026-07-06T12:00:00.000Z"
+    },
+    {
+      "id": "bank-fdeaa1b656c4ed31",
+      "type": "expense",
+      "amount": 12.21,
+      "category": "Comida",
+      "date": "2026-07-06",
+      "note": "Carrefour Boroa",
+      "createdAt": "2026-07-06T12:00:00.000Z"
+    },
+    {
+      "id": "bank-e62d3f217b47a8cc",
+      "type": "expense",
+      "amount": 15.08,
+      "category": "Comida",
+      "date": "2026-07-06",
+      "note": "Gumen Catering",
+      "createdAt": "2026-07-06T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f9beb888a028cfb2",
+      "type": "income",
+      "amount": 7.54,
+      "category": "Bizum",
+      "date": "2026-07-06",
+      "note": "Bizum de Joan Cebrian Gimenez - Comida",
+      "createdAt": "2026-07-06T12:00:00.000Z"
+    },
+    {
+      "id": "bank-cf4b98afe0dd13c7",
+      "type": "expense",
+      "amount": 29.9,
+      "category": "Comida",
+      "date": "2026-07-05",
+      "note": "Gran Muralla",
+      "createdAt": "2026-07-05T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d503eacad5025b32",
+      "type": "expense",
+      "amount": 4.0,
+      "category": "Ocio",
+      "date": "2026-07-04",
+      "note": "Local Social Ca",
+      "createdAt": "2026-07-04T12:00:00.000Z"
+    },
+    {
+      "id": "bank-7646e23a5698b734",
+      "type": "expense",
+      "amount": 86.8,
+      "category": "Salud",
+      "date": "2026-07-04",
+      "note": "Farmacia Can Ro",
+      "createdAt": "2026-07-04T12:00:00.000Z"
+    },
+    {
+      "id": "bank-7167c77ecdbc38a1",
+      "type": "expense",
+      "amount": 4.2,
+      "category": "Ocio",
+      "date": "2026-07-04",
+      "note": "Local Social Ca",
+      "createdAt": "2026-07-04T12:00:00.000Z"
+    },
+    {
+      "id": "bank-368e11ef8ae77ec2",
+      "type": "expense",
+      "amount": 3.9,
+      "category": "Transporte",
+      "date": "2026-07-03",
+      "note": "Serveis Ambient",
+      "createdAt": "2026-07-03T12:00:00.000Z"
+    },
+    {
+      "id": "bank-db059d8634b62d6b",
+      "type": "expense",
+      "amount": 35.0,
+      "category": "Recibos",
+      "date": "2026-07-03",
+      "note": "Apple.com/bill",
+      "createdAt": "2026-07-03T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a1b159cd0b38fa71",
+      "type": "expense",
+      "amount": 8.26,
+      "category": "Comida",
+      "date": "2026-07-03",
+      "note": "Carrefour Boroa",
+      "createdAt": "2026-07-03T12:00:00.000Z"
+    },
+    {
+      "id": "bank-3d69ce2dce458a4c",
+      "type": "expense",
+      "amount": 185.21,
+      "category": "Viajes",
+      "date": "2026-07-02",
+      "note": "Bizum a Maria Garcia Arroyo - Hoteles",
+      "createdAt": "2026-07-02T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f9ff275dec17aa4f",
+      "type": "expense",
+      "amount": 28.36,
+      "category": "Viajes",
+      "date": "2026-07-02",
+      "note": "Bizum a Mireia Garcia Perea - Autobus",
+      "createdAt": "2026-07-02T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6f71a71bf74540ff",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "Compras",
+      "date": "2026-07-02",
+      "note": "Bizum a Ferran Molet Ortiz - Primo D Mierda",
+      "createdAt": "2026-07-02T12:00:00.000Z"
+    },
+    {
+      "id": "bank-ad580a7a6c13ddd7",
+      "type": "expense",
+      "amount": 44.0,
+      "category": "Compras",
+      "date": "2026-07-02",
+      "note": "Marisol Perfume",
+      "createdAt": "2026-07-02T12:00:00.000Z"
+    },
+    {
+      "id": "bank-e9136ec1237e494c",
+      "type": "expense",
+      "amount": 43.95,
+      "category": "Compras",
+      "date": "2026-07-02",
+      "note": "Perfumeria Mari",
+      "createdAt": "2026-07-02T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a9ea8e62cdd136c5",
+      "type": "income",
+      "amount": 7.54,
+      "category": "Bizum",
+      "date": "2026-07-02",
+      "note": "Bizum de Biel Ribas Navarro - Sin Concepto",
+      "createdAt": "2026-07-02T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2e19d12f935c4df3",
+      "type": "expense",
+      "amount": 15.08,
+      "category": "Comida",
+      "date": "2026-07-02",
+      "note": "Gumen Catering",
+      "createdAt": "2026-07-02T12:00:00.000Z"
+    },
+    {
+      "id": "bank-18b2fe5248761d70",
+      "type": "income",
+      "amount": 7.54,
+      "category": "Bizum",
+      "date": "2026-07-02",
+      "note": "Bizum de Joan Cebrian Gimenez - Comia",
+      "createdAt": "2026-07-02T12:00:00.000Z"
+    },
+    {
+      "id": "bank-e1272805ef5aa72c",
+      "type": "expense",
+      "amount": 112.5,
+      "category": "Compras",
+      "date": "2026-07-01",
+      "note": "Carol Perruquer",
+      "createdAt": "2026-07-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-becf8cea13c2f331",
+      "type": "income",
+      "amount": 30.0,
+      "category": "Bizum",
+      "date": "2026-07-01",
+      "note": "Bizum de Francisca Pavon Berlanga - Colonia",
+      "createdAt": "2026-07-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2c6b7f455477a8a8",
+      "type": "expense",
+      "amount": 47.7,
+      "category": "Compras",
+      "date": "2026-07-01",
+      "note": "Foot Locker Spain Slu",
+      "createdAt": "2026-07-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d91fdfc4c07b6d58",
+      "type": "expense",
+      "amount": 27.0,
+      "category": "Recibos",
+      "date": "2026-07-01",
+      "note": "Amazon Pay",
+      "createdAt": "2026-07-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-96350b1fd257c99e",
+      "type": "expense",
+      "amount": 3.0,
+      "category": "Recibos",
+      "date": "2026-07-01",
+      "note": "Cruz Roja",
+      "createdAt": "2026-07-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a9b809307ffc37d8",
+      "type": "expense",
+      "amount": 276.79,
+      "category": "Recibos",
+      "date": "2026-07-01",
+      "note": "Sabadell Consumer Finance",
+      "createdAt": "2026-07-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d2b4bfe0257e0ba7",
+      "type": "income",
+      "amount": 23.0,
+      "category": "Bizum",
+      "date": "2026-06-30",
+      "note": "Bizum de Alejandro Aguero Perez - Sushi",
+      "createdAt": "2026-06-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-fa6013129c8dad1a",
+      "type": "expense",
+      "amount": 36.35,
+      "category": "Comida",
+      "date": "2026-06-30",
+      "note": "Sushi Wu",
+      "createdAt": "2026-06-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-413f147c6268f183",
+      "type": "expense",
+      "amount": 9.05,
+      "category": "Ocio",
+      "date": "2026-06-30",
+      "note": "Bowling Mp",
+      "createdAt": "2026-06-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-43939fa774e0b287",
+      "type": "income",
+      "amount": 7.54,
+      "category": "Bizum",
+      "date": "2026-06-30",
+      "note": "Bizum de Joan Cebrian Gimenez - Comida",
+      "createdAt": "2026-06-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-5f428c4879bd1e5f",
+      "type": "expense",
+      "amount": 10.29,
+      "category": "Comida",
+      "date": "2026-06-30",
+      "note": "Gumen Catering",
+      "createdAt": "2026-06-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-1587b74b80512e74",
+      "type": "expense",
+      "amount": 26.4,
+      "category": "Comida",
+      "date": "2026-06-29",
+      "note": "Pai Mei Splau",
+      "createdAt": "2026-06-29T12:00:00.000Z"
+    },
+    {
+      "id": "bank-e44263daa6b1537d",
+      "type": "expense",
+      "amount": 1.5,
+      "category": "Comida",
+      "date": "2026-06-29",
+      "note": "Nasir Supermark",
+      "createdAt": "2026-06-29T12:00:00.000Z"
+    },
+    {
+      "id": "bank-dff89b5554db588b",
+      "type": "expense",
+      "amount": 13.0,
+      "category": "Transporte",
+      "date": "2026-06-29",
+      "note": "T Mobilitat. Ap",
+      "createdAt": "2026-06-29T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f8ae411ba26ba290",
+      "type": "expense",
+      "amount": 56.99,
+      "category": "Compras",
+      "date": "2026-06-29",
+      "note": "Pccomponentes",
+      "createdAt": "2026-06-29T12:00:00.000Z"
+    },
+    {
+      "id": "bank-cd425286548a21ee",
+      "type": "expense",
+      "amount": 8.42,
+      "category": "Transporte",
+      "date": "2026-06-29",
+      "note": "Aucat Bar Vallcarca N",
+      "createdAt": "2026-06-29T12:00:00.000Z"
+    },
+    {
+      "id": "bank-64c08fdc744d1353",
+      "type": "income",
+      "amount": 1902.32,
+      "category": "Nómina",
+      "date": "2026-06-29",
+      "note": "Nómina Acciona Comercial B2C",
+      "createdAt": "2026-06-29T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a6c6bbb0db5b0084",
+      "type": "expense",
+      "amount": 18.85,
+      "category": "Recibos",
+      "date": "2026-06-29",
+      "note": "Amazon Pay",
+      "createdAt": "2026-06-29T12:00:00.000Z"
+    },
+    {
+      "id": "bank-cff7dc5c5f49a6ad",
+      "type": "expense",
+      "amount": 10.99,
+      "category": "Recibos",
+      "date": "2026-06-29",
+      "note": "PayPal",
+      "createdAt": "2026-06-29T12:00:00.000Z"
+    },
+    {
+      "id": "bank-fac4d8884bd6693c",
+      "type": "expense",
+      "amount": 17.5,
+      "category": "Comida",
+      "date": "2026-06-28",
+      "note": "Bizum a Mireia Garcia Perea - Cena Tortillera",
+      "createdAt": "2026-06-28T12:00:00.000Z"
+    },
+    {
+      "id": "bank-21c619cffa02a2d8",
+      "type": "expense",
+      "amount": 16.0,
+      "category": "Ocio",
+      "date": "2026-06-27",
+      "note": "Salamandra Bcn",
+      "createdAt": "2026-06-27T12:00:00.000Z"
+    },
+    {
+      "id": "bank-ff92bd4cbc6d70b2",
+      "type": "expense",
+      "amount": 3.75,
+      "category": "Comida",
+      "date": "2026-06-26",
+      "note": "K Y P Supermerc",
+      "createdAt": "2026-06-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-cf5ef777cc1c53fb",
+      "type": "expense",
+      "amount": 57.28,
+      "category": "Comida",
+      "date": "2026-06-26",
+      "note": "Bonarea Car Pay",
+      "createdAt": "2026-06-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d8300e8c13e0f87d",
+      "type": "expense",
+      "amount": 18.28,
+      "category": "Comida",
+      "date": "2026-06-26",
+      "note": "Market Castedef",
+      "createdAt": "2026-06-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-7b97cc303e06fcca",
+      "type": "expense",
+      "amount": 2.93,
+      "category": "Comida",
+      "date": "2026-06-26",
+      "note": "Lidl Castelldef",
+      "createdAt": "2026-06-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-cdd7fe27b08727cd",
+      "type": "income",
+      "amount": 5.0,
+      "category": "Bizum",
+      "date": "2026-06-26",
+      "note": "Bizum de Ariadna Soto Esteban - Bebida Bcn",
+      "createdAt": "2026-06-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-82621dd19fe9c1ad",
+      "type": "expense",
+      "amount": 2.4,
+      "category": "Transporte",
+      "date": "2026-06-26",
+      "note": "Serveis Ambient",
+      "createdAt": "2026-06-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-238ed5b2b514aa97",
+      "type": "expense",
+      "amount": 17.6,
+      "category": "Ocio",
+      "date": "2026-06-26",
+      "note": "Yelmo Cines Cas",
+      "createdAt": "2026-06-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-407692e9910ec3ae",
+      "type": "expense",
+      "amount": 36.09,
+      "category": "Recibos",
+      "date": "2026-06-26",
+      "note": "Amazon Pay",
+      "createdAt": "2026-06-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-727617f0f6c89420",
+      "type": "expense",
+      "amount": 140.0,
+      "category": "Regalos",
+      "date": "2026-06-25",
+      "note": "Bizum a Ana Cozar Arevalo - Lápida Yaya",
+      "createdAt": "2026-06-25T12:00:00.000Z"
+    },
+    {
+      "id": "bank-da1b41c692b86a06",
+      "type": "income",
+      "amount": 57.0,
+      "category": "Bizum",
+      "date": "2026-06-25",
+      "note": "Bizum de Francisca Pavon Berlanga - Microondas",
+      "createdAt": "2026-06-25T12:00:00.000Z"
+    },
+    {
+      "id": "bank-748e128e1514f48d",
+      "type": "expense",
+      "amount": 25.9,
+      "category": "Recibos",
+      "date": "2026-06-25",
+      "note": "Amazon Pay",
+      "createdAt": "2026-06-25T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d7cabd4b0cb1a544",
+      "type": "expense",
+      "amount": 6.16,
+      "category": "Comida",
+      "date": "2026-06-24",
+      "note": "Bizum a Jose Gomez Mengual - Comida",
+      "createdAt": "2026-06-24T12:00:00.000Z"
+    },
+    {
+      "id": "bank-44b1b8df49e69374",
+      "type": "income",
+      "amount": 13.0,
+      "category": "Bizum",
+      "date": "2026-06-24",
+      "note": "Bizum de Eric Faneca Abril - Bizum De Eric",
+      "createdAt": "2026-06-24T12:00:00.000Z"
+    },
+    {
+      "id": "bank-89be4e705b2eecc6",
+      "type": "expense",
+      "amount": 8.0,
+      "category": "Ocio",
+      "date": "2026-06-24",
+      "note": "Tardeo Lbdc",
+      "createdAt": "2026-06-24T12:00:00.000Z"
+    },
+    {
+      "id": "bank-c59ed89f29470497",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "Comida",
+      "date": "2026-06-24",
+      "note": "Bar Equus Ii",
+      "createdAt": "2026-06-24T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f4ba0a2518f6d2d2",
+      "type": "expense",
+      "amount": 8.0,
+      "category": "Comida",
+      "date": "2026-06-23",
+      "note": "Equus",
+      "createdAt": "2026-06-23T12:00:00.000Z"
+    },
+    {
+      "id": "bank-611bc544a777c659",
+      "type": "expense",
+      "amount": 33.99,
+      "category": "Recibos",
+      "date": "2026-06-22",
+      "note": "Renting Tec.",
+      "createdAt": "2026-06-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-fe6d8c6e3600003f",
+      "type": "expense",
+      "amount": 1.0,
+      "category": "Compras",
+      "date": "2026-06-22",
+      "note": "Bk17860 Splau C",
+      "createdAt": "2026-06-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-707655783f1efb33",
+      "type": "expense",
+      "amount": 14.65,
+      "category": "Comida",
+      "date": "2026-06-22",
+      "note": "Pai Mei Splau",
+      "createdAt": "2026-06-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-428a2df65bfbffa5",
+      "type": "expense",
+      "amount": 4.51,
+      "category": "Comida",
+      "date": "2026-06-22",
+      "note": "Mcdonalds 72400159",
+      "createdAt": "2026-06-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-0cbfdfe74b739687",
+      "type": "expense",
+      "amount": 5.99,
+      "category": "Compras",
+      "date": "2026-06-22",
+      "note": "Pullandbear.com",
+      "createdAt": "2026-06-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-7f8d904fec2e4c07",
+      "type": "income",
+      "amount": 18.98,
+      "category": "Reembolso",
+      "date": "2026-06-22",
+      "note": "Devolución Mango.com",
+      "createdAt": "2026-06-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2a0f9f5740d740d0",
+      "type": "expense",
+      "amount": 17.8,
+      "category": "Ocio",
+      "date": "2026-06-22",
+      "note": "Yelmofilmsapp",
+      "createdAt": "2026-06-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-624d8af678ecde70",
+      "type": "income",
+      "amount": 24.99,
+      "category": "Otros ingresos",
+      "date": "2026-06-22",
+      "note": "Bonificación bancaria",
+      "createdAt": "2026-06-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-acebc54ebff13ab4",
+      "type": "income",
+      "amount": 4.0,
+      "category": "Bizum",
+      "date": "2026-06-22",
+      "note": "Bizum de Joan Cebrian Gimenez - Vida",
+      "createdAt": "2026-06-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-24f9f147d06c7b18",
+      "type": "income",
+      "amount": 7.54,
+      "category": "Bizum",
+      "date": "2026-06-22",
+      "note": "Bizum de Biel Ribas Navarro - Sin Concepto",
+      "createdAt": "2026-06-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-05809140c56a38e0",
+      "type": "expense",
+      "amount": 7.54,
+      "category": "Comida",
+      "date": "2026-06-22",
+      "note": "Gumen Catering",
+      "createdAt": "2026-06-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f57a3b5e40c1e740",
+      "type": "expense",
+      "amount": 4.24,
+      "category": "Comida",
+      "date": "2026-06-21",
+      "note": "Suma Sant Boi",
+      "createdAt": "2026-06-21T12:00:00.000Z"
+    },
+    {
+      "id": "bank-791e19151500ed19",
+      "type": "income",
+      "amount": 100.0,
+      "category": "Regalo",
+      "date": "2026-06-21",
+      "note": "Bizum de Francisca Pavon Berlanga - Felicidades Cariño",
+      "createdAt": "2026-06-21T12:00:00.000Z"
+    },
+    {
+      "id": "bank-7c99f1d548c53094",
+      "type": "expense",
+      "amount": 5.5,
+      "category": "Comida",
+      "date": "2026-06-21",
+      "note": "Sucre Magic",
+      "createdAt": "2026-06-21T12:00:00.000Z"
+    },
+    {
+      "id": "bank-0fee849d7cb356b5",
+      "type": "income",
+      "amount": 12.0,
+      "category": "Bizum",
+      "date": "2026-06-20",
+      "note": "Bizum de Adrian Comeche Negredo - Sala",
+      "createdAt": "2026-06-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-61d83112799d9f30",
+      "type": "expense",
+      "amount": 12.0,
+      "category": "Ocio",
+      "date": "2026-06-20",
+      "note": "Salamandra Bcn",
+      "createdAt": "2026-06-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-1874e681d4ca7600",
+      "type": "expense",
+      "amount": 16.0,
+      "category": "Ocio",
+      "date": "2026-06-20",
+      "note": "Afterlife",
+      "createdAt": "2026-06-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-96a9a00347aa5af0",
+      "type": "expense",
+      "amount": 12.98,
+      "category": "Comida",
+      "date": "2026-06-20",
+      "note": "Yoomi",
+      "createdAt": "2026-06-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-13a82f3a3bc9d679",
+      "type": "expense",
+      "amount": 8.6,
+      "category": "Comida",
+      "date": "2026-06-19",
+      "note": "Creperia Punto",
+      "createdAt": "2026-06-19T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6ff8b7aa17c8a6b3",
+      "type": "expense",
+      "amount": 53.66,
+      "category": "Compras",
+      "date": "2026-06-19",
+      "note": "12511 Terrassa",
+      "createdAt": "2026-06-19T12:00:00.000Z"
+    },
+    {
+      "id": "bank-445d0748f9c79fbd",
+      "type": "expense",
+      "amount": 11.28,
+      "category": "Comida",
+      "date": "2026-06-19",
+      "note": "Kfc San Cugat",
+      "createdAt": "2026-06-19T12:00:00.000Z"
+    },
+    {
+      "id": "bank-b9b879fd6cd4de89",
+      "type": "expense",
+      "amount": 25.78,
+      "category": "Ocio",
+      "date": "2026-06-18",
+      "note": "Fourvenues",
+      "createdAt": "2026-06-18T12:00:00.000Z"
+    },
+    {
+      "id": "bank-859cbbd248d6a1b3",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "Compras",
+      "date": "2026-06-18",
+      "note": "Bizum a Ferran Molet Ortiz - Moros No",
+      "createdAt": "2026-06-18T12:00:00.000Z"
+    },
+    {
+      "id": "bank-491cb3ea157cd984",
+      "type": "expense",
+      "amount": 52.5,
+      "category": "Compras",
+      "date": "2026-06-17",
+      "note": "Nespresso Sant Cugat",
+      "createdAt": "2026-06-17T12:00:00.000Z"
+    },
+    {
+      "id": "bank-e3c2b799e667f84b",
+      "type": "expense",
+      "amount": 16.3,
+      "category": "Comida",
+      "date": "2026-06-16",
+      "note": "Bar El Ciclon D",
+      "createdAt": "2026-06-16T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f605e365e531d6ed",
+      "type": "expense",
+      "amount": 53.24,
+      "category": "Ocio",
+      "date": "2026-06-16",
+      "note": "Xollo",
+      "createdAt": "2026-06-16T12:00:00.000Z"
+    },
+    {
+      "id": "bank-0e006dc524f20db7",
+      "type": "expense",
+      "amount": 16.44,
+      "category": "Compras",
+      "date": "2026-06-16",
+      "note": "Media Markt Onl",
+      "createdAt": "2026-06-16T12:00:00.000Z"
+    },
+    {
+      "id": "bank-552b8c19ccb3db02",
+      "type": "expense",
+      "amount": 10.1,
+      "category": "Transporte",
+      "date": "2026-06-16",
+      "note": "Blinkay Gava Mar",
+      "createdAt": "2026-06-16T12:00:00.000Z"
+    },
+    {
+      "id": "bank-7c115fee3fa1881d",
+      "type": "expense",
+      "amount": 4.0,
+      "category": "Compras",
+      "date": "2026-06-16",
+      "note": "Bizum a Biel Ribas Navarro - Sin Concepto",
+      "createdAt": "2026-06-16T12:00:00.000Z"
+    },
+    {
+      "id": "bank-03b8b5aa66af9a2d",
+      "type": "expense",
+      "amount": 57.96,
+      "category": "Compras",
+      "date": "2026-06-15",
+      "note": "Mango.com",
+      "createdAt": "2026-06-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6db71c16ab66fd2c",
+      "type": "expense",
+      "amount": 59.15,
+      "category": "Regalos",
+      "date": "2026-06-15",
+      "note": "Primark Barca- Cornell",
+      "createdAt": "2026-06-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-49fc945a9e5234d5",
+      "type": "expense",
+      "amount": 35.49,
+      "category": "Comida",
+      "date": "2026-06-15",
+      "note": "Uber * Eats Pending",
+      "createdAt": "2026-06-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a75b4360922064a4",
+      "type": "expense",
+      "amount": 38.25,
+      "category": "Salud",
+      "date": "2026-06-15",
+      "note": "Sp Herbellavita",
+      "createdAt": "2026-06-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-bb459d68b8399a4c",
+      "type": "expense",
+      "amount": 7.47,
+      "category": "Compras",
+      "date": "2026-06-15",
+      "note": "Sq *ae Store Concept S",
+      "createdAt": "2026-06-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-67b1671a0a45e6bc",
+      "type": "expense",
+      "amount": 5.28,
+      "category": "Transporte",
+      "date": "2026-06-15",
+      "note": "Tunelspan B.vallvidrera S",
+      "createdAt": "2026-06-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-84037056928aa13b",
+      "type": "income",
+      "amount": 100.0,
+      "category": "Bizum",
+      "date": "2026-06-15",
+      "note": "Bizum de Francisca Pavon Berlanga - Bambas Y Cafés",
+      "createdAt": "2026-06-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-4d3d30946a333f86",
+      "type": "expense",
+      "amount": 12.0,
+      "category": "Ocio",
+      "date": "2026-06-15",
+      "note": "Salamandra Bcn",
+      "createdAt": "2026-06-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-ee19c033623eaea4",
+      "type": "expense",
+      "amount": 14.11,
+      "category": "Comida",
+      "date": "2026-06-15",
+      "note": "Carrefour Boroa",
+      "createdAt": "2026-06-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-4e4674a7dca72aa3",
+      "type": "expense",
+      "amount": 5.75,
+      "category": "Transporte",
+      "date": "2026-06-14",
+      "note": "Ap Urgell",
+      "createdAt": "2026-06-14T12:00:00.000Z"
+    },
+    {
+      "id": "bank-624b4b579bc370b5",
+      "type": "expense",
+      "amount": 51.06,
+      "category": "Comida",
+      "date": "2026-06-13",
+      "note": "Bonarea Car Pay",
+      "createdAt": "2026-06-13T12:00:00.000Z"
+    },
+    {
+      "id": "bank-7d783c185acc4f52",
+      "type": "income",
+      "amount": 35.0,
+      "category": "Bizum",
+      "date": "2026-06-13",
+      "note": "Bizum de Raul Pazos Garcia - Babbbtyy",
+      "createdAt": "2026-06-13T12:00:00.000Z"
+    },
+    {
+      "id": "bank-913319e2257e2219",
+      "type": "expense",
+      "amount": 21.1,
+      "category": "Comida",
+      "date": "2026-06-13",
+      "note": "Mercadona Sant",
+      "createdAt": "2026-06-13T12:00:00.000Z"
+    },
+    {
+      "id": "bank-89cb1dce9fb890c3",
+      "type": "expense",
+      "amount": 26.45,
+      "category": "Comida",
+      "date": "2026-06-12",
+      "note": "Glovo 11jun Bkanjluc",
+      "createdAt": "2026-06-12T12:00:00.000Z"
+    },
+    {
+      "id": "bank-5c82b4989c8f8c3b",
+      "type": "expense",
+      "amount": 20.19,
+      "category": "Compras",
+      "date": "2026-06-12",
+      "note": "Mgp*wallapop Sl",
+      "createdAt": "2026-06-12T12:00:00.000Z"
+    },
+    {
+      "id": "bank-1541e8033cbc138b",
+      "type": "income",
+      "amount": 20.19,
+      "category": "Reembolso",
+      "date": "2026-06-12",
+      "note": "Devolución Mgp*wallapop Sl",
+      "createdAt": "2026-06-12T12:00:00.000Z"
+    },
+    {
+      "id": "bank-013a266192397ac9",
+      "type": "expense",
+      "amount": 19.99,
+      "category": "Compras",
+      "date": "2026-06-12",
+      "note": "Stradivarius",
+      "createdAt": "2026-06-12T12:00:00.000Z"
+    },
+    {
+      "id": "bank-551e0a58ac7a6309",
+      "type": "expense",
+      "amount": 26.7,
+      "category": "Comida",
+      "date": "2026-06-12",
+      "note": "Pai Mei",
+      "createdAt": "2026-06-12T12:00:00.000Z"
+    },
+    {
+      "id": "bank-947b4f849c1833fc",
+      "type": "expense",
+      "amount": 1.0,
+      "category": "Compras",
+      "date": "2026-06-12",
+      "note": "Bizum a Biel Ribas Navarro - Golfo",
+      "createdAt": "2026-06-12T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f63027de4020f9f0",
+      "type": "expense",
+      "amount": 24.5,
+      "category": "Comida",
+      "date": "2026-06-11",
+      "note": "Lin Kakkoi Sant",
+      "createdAt": "2026-06-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-275e11da92055f9c",
+      "type": "expense",
+      "amount": 6.85,
+      "category": "Comida",
+      "date": "2026-06-11",
+      "note": "Zona8",
+      "createdAt": "2026-06-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-fa1abb4e9face177",
+      "type": "expense",
+      "amount": 17.45,
+      "category": "Casa",
+      "date": "2026-06-11",
+      "note": "Todos Hogar",
+      "createdAt": "2026-06-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6759aac772cade5c",
+      "type": "expense",
+      "amount": 32.55,
+      "category": "Comida",
+      "date": "2026-06-11",
+      "note": "Just Eat Spain",
+      "createdAt": "2026-06-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-ba3f1d08e98a2172",
+      "type": "expense",
+      "amount": 30.0,
+      "category": "Compras",
+      "date": "2026-06-11",
+      "note": "Aramunt Sa",
+      "createdAt": "2026-06-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-242c4579c4d7f0af",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "Compras",
+      "date": "2026-06-10",
+      "note": "Bizum a Rosa Maria Alcalde Gonzalez - Sin Concepto",
+      "createdAt": "2026-06-10T12:00:00.000Z"
+    },
+    {
+      "id": "bank-61ae3c7ffe816626",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "Regalos",
+      "date": "2026-06-10",
+      "note": "Bizum a Ferran Molet Ortiz - Cumple Prima",
+      "createdAt": "2026-06-10T12:00:00.000Z"
+    },
+    {
+      "id": "bank-c59af7bb3061f366",
+      "type": "income",
+      "amount": 32.55,
+      "category": "Reembolso",
+      "date": "2026-06-09",
+      "note": "Devolución Mgp*wallapop Sl",
+      "createdAt": "2026-06-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-4b2f93d47afcc220",
+      "type": "expense",
+      "amount": 20.5,
+      "category": "Compras",
+      "date": "2026-06-09",
+      "note": "Bizum a Jorge De Egea Lopez - Guapo",
+      "createdAt": "2026-06-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-03dd0ec1373ede47",
+      "type": "income",
+      "amount": 0.5,
+      "category": "Bizum",
+      "date": "2026-06-09",
+      "note": "Bizum de Jorge De Egea Lopez - Bizum De Jorge",
+      "createdAt": "2026-06-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-dd13e5cba3880152",
+      "type": "income",
+      "amount": 20.0,
+      "category": "Bizum",
+      "date": "2026-06-09",
+      "note": "Bizum de Jorge De Egea Lopez - Bizum De Jorge",
+      "createdAt": "2026-06-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-621fc6e0f1f61233",
+      "type": "income",
+      "amount": 1.6,
+      "category": "Bizum",
+      "date": "2026-06-09",
+      "note": "Bizum de Jorge De Egea Lopez - Bizum De Jorge",
+      "createdAt": "2026-06-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-da8865a94c15a0f3",
+      "type": "income",
+      "amount": 1.66,
+      "category": "Bizum",
+      "date": "2026-06-09",
+      "note": "Bizum de Noelia Hervas Alvarez - Bizum De Noelia",
+      "createdAt": "2026-06-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d7911c52715a234b",
+      "type": "income",
+      "amount": 1.66,
+      "category": "Bizum",
+      "date": "2026-06-09",
+      "note": "Bizum de Naira Castro Millan - Icloud",
+      "createdAt": "2026-06-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-927a3225a69226cc",
+      "type": "income",
+      "amount": 16.0,
+      "category": "Bizum",
+      "date": "2026-06-09",
+      "note": "Bizum de Biel Ribas Navarro - Sin Concepto",
+      "createdAt": "2026-06-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-662b96d11412aee2",
+      "type": "expense",
+      "amount": 46.14,
+      "category": "Comida",
+      "date": "2026-06-09",
+      "note": "Turris",
+      "createdAt": "2026-06-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-8cf12f68ef7802a1",
+      "type": "expense",
+      "amount": 18.09,
+      "category": "Compras",
+      "date": "2026-06-09",
+      "note": "Bershka",
+      "createdAt": "2026-06-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-fe0c4ed6f795f61d",
+      "type": "expense",
+      "amount": 5.99,
+      "category": "Recibos",
+      "date": "2026-06-09",
+      "note": "PayPal",
+      "createdAt": "2026-06-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-5ecaa8fc8d3a3e6b",
+      "type": "expense",
+      "amount": 8.99,
+      "category": "Recibos",
+      "date": "2026-06-09",
+      "note": "PayPal",
+      "createdAt": "2026-06-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-e919ed8709b5dff3",
+      "type": "expense",
+      "amount": 25.2,
+      "category": "Ocio",
+      "date": "2026-06-08",
+      "note": "Cinesa Parc Val",
+      "createdAt": "2026-06-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-c5caa4f579eed160",
+      "type": "expense",
+      "amount": 30.9,
+      "category": "Recibos",
+      "date": "2026-06-08",
+      "note": "Viva Aqua Service",
+      "createdAt": "2026-06-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-3285941c616399a5",
+      "type": "expense",
+      "amount": 8.12,
+      "category": "Salud",
+      "date": "2026-06-06",
+      "note": "Farmacia Rossel",
+      "createdAt": "2026-06-06T12:00:00.000Z"
+    },
+    {
+      "id": "bank-5cb0758cd6ca4315",
+      "type": "expense",
+      "amount": 49.99,
+      "category": "Compras",
+      "date": "2026-06-05",
+      "note": "Bershka.com",
+      "createdAt": "2026-06-05T12:00:00.000Z"
+    },
+    {
+      "id": "bank-496b2b2912d131ae",
+      "type": "expense",
+      "amount": 9.99,
+      "category": "Recibos",
+      "date": "2026-06-04",
+      "note": "Apple.com/bill",
+      "createdAt": "2026-06-04T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6cbde556e4919aa2",
+      "type": "expense",
+      "amount": 16.54,
+      "category": "Comida",
+      "date": "2026-06-04",
+      "note": "Uber * Eats Pending",
+      "createdAt": "2026-06-04T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d3c7cbdc52720a36",
+      "type": "expense",
+      "amount": 32.55,
+      "category": "Compras",
+      "date": "2026-06-03",
+      "note": "Mgp*wallapop Sl",
+      "createdAt": "2026-06-03T12:00:00.000Z"
+    },
+    {
+      "id": "bank-07e2de19b1a7eb6c",
+      "type": "expense",
+      "amount": 12.99,
+      "category": "Salud",
+      "date": "2026-06-03",
+      "note": "Farmacia Can Ro",
+      "createdAt": "2026-06-03T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d29e913e6a41a218",
+      "type": "expense",
+      "amount": 21.0,
+      "category": "♡D♡",
+      "date": "2026-06-02",
+      "note": "Bizum a David Dominguez Escribano - Cami",
+      "createdAt": "2026-06-02T12:00:00.000Z"
+    },
+    {
+      "id": "bank-04991d8f0d409552",
+      "type": "expense",
+      "amount": 3.0,
+      "category": "Recibos",
+      "date": "2026-06-02",
+      "note": "Cruz Roja",
+      "createdAt": "2026-06-02T12:00:00.000Z"
+    },
+    {
+      "id": "bank-0378a94e57e1b7fe",
+      "type": "expense",
+      "amount": 11.25,
+      "category": "Compras",
+      "date": "2026-06-01",
+      "note": "Bizum a Jorge De Egea Lopez - Sin Concepto",
+      "createdAt": "2026-06-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2ca05eb656cab886",
+      "type": "income",
+      "amount": 11.25,
+      "category": "Bizum",
+      "date": "2026-06-01",
+      "note": "Bizum de Jorge De Egea Lopez - Bizum De Jorge",
+      "createdAt": "2026-06-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-e91dafc3e82f7cc1",
+      "type": "expense",
+      "amount": 167.55,
+      "category": "Compras",
+      "date": "2026-06-01",
+      "note": "Mgp*wallapop Sl",
+      "createdAt": "2026-06-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f492c93832cd455d",
+      "type": "expense",
+      "amount": 8.42,
+      "category": "Transporte",
+      "date": "2026-06-01",
+      "note": "Aucat Bar Vallcarca N",
+      "createdAt": "2026-06-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-699133bc419c395a",
+      "type": "expense",
+      "amount": 8.42,
+      "category": "Transporte",
+      "date": "2026-06-01",
+      "note": "Aucat Bar Vallcarca S",
+      "createdAt": "2026-06-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d2350ea71c0f5473",
+      "type": "expense",
+      "amount": 3.0,
+      "category": "Comida",
+      "date": "2026-06-01",
+      "note": "Mcdonalds 72400159",
+      "createdAt": "2026-06-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6fc42f46635e44eb",
+      "type": "expense",
+      "amount": 16.4,
+      "category": "Comida",
+      "date": "2026-06-01",
+      "note": "Graneria Padro",
+      "createdAt": "2026-06-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-e243a37b7214b6e0",
+      "type": "income",
+      "amount": 40.0,
+      "category": "Bizum",
+      "date": "2026-06-01",
+      "note": "Bizum de Maria Hernandez I Fuentes - David Y Maria",
+      "createdAt": "2026-06-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-504f55b2f86d65f2",
+      "type": "income",
+      "amount": 7.54,
+      "category": "Bizum",
+      "date": "2026-06-01",
+      "note": "Bizum de Joan Cebrian Gimenez - Comia",
+      "createdAt": "2026-06-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2c5a1a37b9479919",
+      "type": "expense",
+      "amount": 15.08,
+      "category": "Comida",
+      "date": "2026-06-01",
+      "note": "Gumen Catering",
+      "createdAt": "2026-06-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-37591f53f4cea7fc",
+      "type": "expense",
+      "amount": 276.79,
+      "category": "Recibos",
+      "date": "2026-06-01",
+      "note": "Sabadell Consumer Finance",
+      "createdAt": "2026-06-01T12:00:00.000Z"
+    },
+    {
+      "id": "bank-dd96eae0ef264128",
+      "type": "expense",
+      "amount": 12.0,
+      "category": "Compras",
+      "date": "2026-05-31",
+      "note": "Bedisco",
+      "createdAt": "2026-05-31T12:00:00.000Z"
+    },
+    {
+      "id": "bank-1ea4bcf12be4a75b",
+      "type": "expense",
+      "amount": 50.0,
+      "category": "Compras",
+      "date": "2026-05-31",
+      "note": "Es Llobregat",
+      "createdAt": "2026-05-31T12:00:00.000Z"
+    },
+    {
+      "id": "bank-7787c7b79e215461",
+      "type": "expense",
+      "amount": 2.7,
+      "category": "Ocio",
+      "date": "2026-05-31",
+      "note": "Parc Valles",
+      "createdAt": "2026-05-31T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6e73cecf92e45ead",
+      "type": "income",
+      "amount": 60.0,
+      "category": "Bizum",
+      "date": "2026-05-31",
+      "note": "Bizum de Francisca Pavon Berlanga - Bizum De Francisca",
+      "createdAt": "2026-05-31T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d05a1cae470d5092",
+      "type": "expense",
+      "amount": 9.4,
+      "category": "Compras",
+      "date": "2026-05-31",
+      "note": "Bizum a Noelia Hervas Alvarez - Sin Concepto",
+      "createdAt": "2026-05-31T12:00:00.000Z"
+    },
+    {
+      "id": "bank-b694bf2c7940c956",
+      "type": "expense",
+      "amount": 21.8,
+      "category": "Compras",
+      "date": "2026-05-30",
+      "note": "Bizum a Noelia Hervas Alvarez - Mi Comia",
+      "createdAt": "2026-05-30T12:00:00.000Z"
+    },
+    {
+      "id": "bank-39a4f9cd72963da5",
+      "type": "expense",
+      "amount": 41.25,
+      "category": "Comida",
+      "date": "2026-05-29",
+      "note": "Piaceri D'itali",
+      "createdAt": "2026-05-29T12:00:00.000Z"
+    },
+    {
+      "id": "bank-20adda5743cb101a",
+      "type": "income",
+      "amount": 50.0,
+      "category": "Bizum",
+      "date": "2026-05-29",
+      "note": "Bizum de Francisca Pavon Berlanga - Bizum De Francisca",
+      "createdAt": "2026-05-29T12:00:00.000Z"
+    },
+    {
+      "id": "bank-138377234d7c3293",
+      "type": "income",
+      "amount": 40.0,
+      "category": "Bizum",
+      "date": "2026-05-29",
+      "note": "Bizum de Francisca Pavon Berlanga - Bizum De Francisca",
+      "createdAt": "2026-05-29T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6d0ad6fcebcfb0ff",
+      "type": "income",
+      "amount": 169.0,
+      "category": "Regalo",
+      "date": "2026-05-29",
+      "note": "Bizum de Laia Gonzalez Martinez - Biberones",
+      "createdAt": "2026-05-29T12:00:00.000Z"
+    },
+    {
+      "id": "bank-34b6abf523f66902",
+      "type": "expense",
+      "amount": 60.0,
+      "category": "Compras",
+      "date": "2026-05-29",
+      "note": "Bizum a Laia Gonzalez Martinez - Eva Paki Jorge",
+      "createdAt": "2026-05-29T12:00:00.000Z"
+    },
+    {
+      "id": "bank-8643d9244544e953",
+      "type": "expense",
+      "amount": 30.0,
+      "category": "Compras",
+      "date": "2026-05-28",
+      "note": "Bizum a Ferran Molet Ortiz - Lipotimia",
+      "createdAt": "2026-05-28T12:00:00.000Z"
+    },
+    {
+      "id": "bank-efd3b1a5111b0c57",
+      "type": "expense",
+      "amount": 3.91,
+      "category": "Comida",
+      "date": "2026-05-28",
+      "note": "Mcdonalds 72400347",
+      "createdAt": "2026-05-28T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6cad3e79f863b248",
+      "type": "income",
+      "amount": 1902.32,
+      "category": "Nómina",
+      "date": "2026-05-28",
+      "note": "Nómina Acciona Comercial B2C",
+      "createdAt": "2026-05-28T12:00:00.000Z"
+    },
+    {
+      "id": "bank-715fbfd27b02824a",
+      "type": "income",
+      "amount": 150.0,
+      "category": "Regalo",
+      "date": "2026-05-28",
+      "note": "Bizum de Rosario Fernandez Carou - Regalo Cumpleaños Laura",
+      "createdAt": "2026-05-28T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2d1c3aa28e0e59ce",
+      "type": "expense",
+      "amount": 3.9,
+      "category": "Transporte",
+      "date": "2026-05-27",
+      "note": "Serveis Ambient",
+      "createdAt": "2026-05-27T12:00:00.000Z"
+    },
+    {
+      "id": "bank-e7e1abf00756c8ca",
+      "type": "expense",
+      "amount": 10.99,
+      "category": "Recibos",
+      "date": "2026-05-27",
+      "note": "PayPal",
+      "createdAt": "2026-05-27T12:00:00.000Z"
+    },
+    {
+      "id": "bank-1b7c09e4c24c3b47",
+      "type": "expense",
+      "amount": 5.5,
+      "category": "Compras",
+      "date": "2026-05-26",
+      "note": "Bizum a Yeray Cortes Garcia - Dndnbd",
+      "createdAt": "2026-05-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-02e6a9c98abe7e9c",
+      "type": "expense",
+      "amount": 11.0,
+      "category": "Ocio",
+      "date": "2026-05-26",
+      "note": "Sq *pemsa Leisure Sl.",
+      "createdAt": "2026-05-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-40a9ce7fdb4ad515",
+      "type": "expense",
+      "amount": 5.5,
+      "category": "Ocio",
+      "date": "2026-05-26",
+      "note": "Sq *pemsa Leisure Sl.",
+      "createdAt": "2026-05-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6faabd3c1035a21f",
+      "type": "expense",
+      "amount": 5.5,
+      "category": "Ocio",
+      "date": "2026-05-26",
+      "note": "Sq *pemsa Leisure Sl.",
+      "createdAt": "2026-05-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f7755e1fd95f0ea1",
+      "type": "expense",
+      "amount": 5.5,
+      "category": "Ocio",
+      "date": "2026-05-26",
+      "note": "Sq *pemsa Leisure Sl.",
+      "createdAt": "2026-05-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-3d54512342a83e83",
+      "type": "expense",
+      "amount": 11.0,
+      "category": "Ocio",
+      "date": "2026-05-26",
+      "note": "Sq *pemsa Leisure Sl.",
+      "createdAt": "2026-05-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f6a9c0017bfe2b07",
+      "type": "expense",
+      "amount": 6.0,
+      "category": "Ocio",
+      "date": "2026-05-26",
+      "note": "Sq *pemsa Leisure Sl.",
+      "createdAt": "2026-05-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2cf91869ff576544",
+      "type": "expense",
+      "amount": 4.0,
+      "category": "Compras",
+      "date": "2026-05-26",
+      "note": "Bizum a Biel Ribas Navarro - Sin Concepto",
+      "createdAt": "2026-05-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-4f00fb5fc49187dd",
+      "type": "expense",
+      "amount": 8.18,
+      "category": "Regalos",
+      "date": "2026-05-26",
+      "note": "Bizum a Yeray Cortes Garcia - Regalo Calvo",
+      "createdAt": "2026-05-26T12:00:00.000Z"
+    },
+    {
+      "id": "bank-1bf6dc48e606e7bb",
+      "type": "expense",
+      "amount": 11.21,
+      "category": "Comida",
+      "date": "2026-05-25",
+      "note": "Mcdonalds 72400159",
+      "createdAt": "2026-05-25T12:00:00.000Z"
+    },
+    {
+      "id": "bank-338bfe49f6d0ccd3",
+      "type": "income",
+      "amount": 24.99,
+      "category": "Otros ingresos",
+      "date": "2026-05-25",
+      "note": "Bonificación bancaria",
+      "createdAt": "2026-05-25T12:00:00.000Z"
+    },
+    {
+      "id": "bank-c259a3407b6895b8",
+      "type": "expense",
+      "amount": 60.79,
+      "category": "Viajes",
+      "date": "2026-05-25",
+      "note": "Bizum a Maria Garcia Arroyo - Vuelo",
+      "createdAt": "2026-05-25T12:00:00.000Z"
+    },
+    {
+      "id": "bank-855a4134c563eceb",
+      "type": "expense",
+      "amount": 126.39,
+      "category": "Viajes",
+      "date": "2026-05-25",
+      "note": "Bizum a Yeray Cortes Garcia - Krabi Bangkok Y Ferri",
+      "createdAt": "2026-05-25T12:00:00.000Z"
+    },
+    {
+      "id": "bank-7a6633ecfe63fa58",
+      "type": "expense",
+      "amount": 136.65,
+      "category": "Viajes",
+      "date": "2026-05-25",
+      "note": "Bizum a Mireia Garcia Perea - Chiang Mai",
+      "createdAt": "2026-05-25T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a790df19bc74fc43",
+      "type": "expense",
+      "amount": 15.7,
+      "category": "Comida",
+      "date": "2026-05-23",
+      "note": "Bizum a Jorge De Egea Lopez - Comida Eva",
+      "createdAt": "2026-05-23T12:00:00.000Z"
+    },
+    {
+      "id": "bank-24189ebbe7fd8921",
+      "type": "expense",
+      "amount": 7.05,
+      "category": "Transporte",
+      "date": "2026-05-23",
+      "note": "Serveis Ambient",
+      "createdAt": "2026-05-23T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2f3984effcca090d",
+      "type": "expense",
+      "amount": 3.26,
+      "category": "Comida",
+      "date": "2026-05-23",
+      "note": "Supermercado Co",
+      "createdAt": "2026-05-23T12:00:00.000Z"
+    },
+    {
+      "id": "bank-ce9b51b1c35eab9c",
+      "type": "expense",
+      "amount": 5.0,
+      "category": "Comida",
+      "date": "2026-05-23",
+      "note": "Taverna Decebal",
+      "createdAt": "2026-05-23T12:00:00.000Z"
+    },
+    {
+      "id": "bank-4f83c1e816d1875e",
+      "type": "expense",
+      "amount": 33.99,
+      "category": "Recibos",
+      "date": "2026-05-22",
+      "note": "Renting Tec.",
+      "createdAt": "2026-05-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2924dee7f3ae2d71",
+      "type": "expense",
+      "amount": 2.3,
+      "category": "Compras",
+      "date": "2026-05-22",
+      "note": "T372 Belros C.c",
+      "createdAt": "2026-05-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2deba00057b30d7b",
+      "type": "expense",
+      "amount": 9.0,
+      "category": "Comida",
+      "date": "2026-05-22",
+      "note": "Frankfurts Orig",
+      "createdAt": "2026-05-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a7a731de1d31f206",
+      "type": "expense",
+      "amount": 7.54,
+      "category": "Comida",
+      "date": "2026-05-22",
+      "note": "Gumen Catering",
+      "createdAt": "2026-05-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-1fed8898eeee1374",
+      "type": "expense",
+      "amount": 950.36,
+      "category": "Recibos",
+      "date": "2026-05-22",
+      "note": "PayPal",
+      "createdAt": "2026-05-22T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a53f824635f53cc2",
+      "type": "income",
+      "amount": 7.54,
+      "category": "Bizum",
+      "date": "2026-05-21",
+      "note": "Bizum de Joan Cebrian Gimenez - Comida",
+      "createdAt": "2026-05-21T12:00:00.000Z"
+    },
+    {
+      "id": "bank-42417da414de8531",
+      "type": "expense",
+      "amount": 7.54,
+      "category": "Comida",
+      "date": "2026-05-21",
+      "note": "Gumen Catering",
+      "createdAt": "2026-05-21T12:00:00.000Z"
+    },
+    {
+      "id": "bank-3ef4eb062057a165",
+      "type": "expense",
+      "amount": 11.7,
+      "category": "Recibos",
+      "date": "2026-05-21",
+      "note": "PayPal",
+      "createdAt": "2026-05-21T12:00:00.000Z"
+    },
+    {
+      "id": "bank-48c0bfbf53851727",
+      "type": "expense",
+      "amount": 50.0,
+      "category": "Compras",
+      "date": "2026-05-21",
+      "note": "Es Llobregat",
+      "createdAt": "2026-05-21T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f24a859e4381537b",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "Compras",
+      "date": "2026-05-20",
+      "note": "Bizum a Ferran Molet Ortiz - Cerdo",
+      "createdAt": "2026-05-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-974ec031e4b3c863",
+      "type": "expense",
+      "amount": 6.25,
+      "category": "Comida",
+      "date": "2026-05-20",
+      "note": "Bon Area",
+      "createdAt": "2026-05-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d42b00380946f9d6",
+      "type": "expense",
+      "amount": 25.0,
+      "category": "Compras",
+      "date": "2026-05-20",
+      "note": "Bizum a Tuan Hoang - Eva",
+      "createdAt": "2026-05-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-7a45b0773e1ff76c",
+      "type": "expense",
+      "amount": 9.99,
+      "category": "Compras",
+      "date": "2026-05-20",
+      "note": "Hm Es0098",
+      "createdAt": "2026-05-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-bcaf72abaf3ede61",
+      "type": "income",
+      "amount": 150.0,
+      "category": "Regalo",
+      "date": "2026-05-20",
+      "note": "Bizum de Lidia Moscoso Fernandez - Regalo Laura",
+      "createdAt": "2026-05-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-4c7a0eb03345f30c",
+      "type": "income",
+      "amount": 150.0,
+      "category": "Regalo",
+      "date": "2026-05-20",
+      "note": "Bizum de Francisco Moscoso Munoz - Regalo Cumple Laura",
+      "createdAt": "2026-05-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-e705a5f614f7a9cf",
+      "type": "income",
+      "amount": 350.0,
+      "category": "Regalo",
+      "date": "2026-05-20",
+      "note": "Bizum de Joan Cebrian Gimenez - Regalo Laura",
+      "createdAt": "2026-05-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-cc0eef73ebd054fe",
+      "type": "expense",
+      "amount": 3.0,
+      "category": "Viajes",
+      "date": "2026-05-20",
+      "note": "Waynabox",
+      "createdAt": "2026-05-20T12:00:00.000Z"
+    },
+    {
+      "id": "bank-1b1328375994399f",
+      "type": "expense",
+      "amount": 218.0,
+      "category": "Transporte",
+      "date": "2026-05-19",
+      "note": "Bsm Caixer Bada",
+      "createdAt": "2026-05-19T12:00:00.000Z"
+    },
+    {
+      "id": "bank-4d698e414eebe6ad",
+      "type": "expense",
+      "amount": 5.87,
+      "category": "Comida",
+      "date": "2026-05-19",
+      "note": "Bar La Familia",
+      "createdAt": "2026-05-19T12:00:00.000Z"
+    },
+    {
+      "id": "bank-03063bbeaebbec05",
+      "type": "expense",
+      "amount": 7.54,
+      "category": "Comida",
+      "date": "2026-05-19",
+      "note": "Gumen Catering",
+      "createdAt": "2026-05-19T12:00:00.000Z"
+    },
+    {
+      "id": "bank-24b53369aae9ece3",
+      "type": "expense",
+      "amount": 11.99,
+      "category": "Casa",
+      "date": "2026-05-18",
+      "note": "Muy Mucho Splau",
+      "createdAt": "2026-05-18T12:00:00.000Z"
+    },
+    {
+      "id": "bank-b4db57c7f21dc885",
+      "type": "expense",
+      "amount": 19.49,
+      "category": "Compras",
+      "date": "2026-05-18",
+      "note": "10638 Cornellaÿ",
+      "createdAt": "2026-05-18T12:00:00.000Z"
+    },
+    {
+      "id": "bank-3c9d39be812a4683",
+      "type": "expense",
+      "amount": 31.08,
+      "category": "Compras",
+      "date": "2026-05-18",
+      "note": "Bershka",
+      "createdAt": "2026-05-18T12:00:00.000Z"
+    },
+    {
+      "id": "bank-9fde5e5d1e620e9f",
+      "type": "expense",
+      "amount": 1.25,
+      "category": "Comida",
+      "date": "2026-05-18",
+      "note": "Coffee Capp By N And I",
+      "createdAt": "2026-05-18T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6be69265f172a6da",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "Regalos",
+      "date": "2026-05-18",
+      "note": "Primark San Cugat",
+      "createdAt": "2026-05-18T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f72e2e7f14f839ff",
+      "type": "expense",
+      "amount": 14.56,
+      "category": "Ocio",
+      "date": "2026-05-18",
+      "note": "Playtomic.io 58175ccb",
+      "createdAt": "2026-05-18T12:00:00.000Z"
+    },
+    {
+      "id": "bank-1aefeba3d67ac899",
+      "type": "expense",
+      "amount": 33.45,
+      "category": "Comida",
+      "date": "2026-05-18",
+      "note": "Uber * Eats Pending",
+      "createdAt": "2026-05-18T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2e813dfa14fe5618",
+      "type": "income",
+      "amount": 7.99,
+      "category": "Reembolso",
+      "date": "2026-05-18",
+      "note": "Devolución Playtomic.io 8380da47",
+      "createdAt": "2026-05-18T12:00:00.000Z"
+    },
+    {
+      "id": "bank-0188ccedc823cb21",
+      "type": "expense",
+      "amount": 4.0,
+      "category": "Compras",
+      "date": "2026-05-18",
+      "note": "Bizum a Yeray Cortes Garcia - Granisau",
+      "createdAt": "2026-05-18T12:00:00.000Z"
+    },
+    {
+      "id": "bank-9e9e6069a89595f3",
+      "type": "expense",
+      "amount": 7.54,
+      "category": "Comida",
+      "date": "2026-05-18",
+      "note": "Gumen Catering",
+      "createdAt": "2026-05-18T12:00:00.000Z"
+    },
+    {
+      "id": "bank-7cc599ba8666a086",
+      "type": "income",
+      "amount": 7.54,
+      "category": "Bizum",
+      "date": "2026-05-18",
+      "note": "Bizum de Joan Cebrian Gimenez - Comia",
+      "createdAt": "2026-05-18T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f69b1ea71b1e9fe1",
+      "type": "expense",
+      "amount": 58.38,
+      "category": "Recibos",
+      "date": "2026-05-18",
+      "note": "PayPal",
+      "createdAt": "2026-05-18T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a3a6047211b17838",
+      "type": "expense",
+      "amount": 11.38,
+      "category": "Compras",
+      "date": "2026-05-17",
+      "note": "Express Pxb Pas",
+      "createdAt": "2026-05-17T12:00:00.000Z"
+    },
+    {
+      "id": "bank-e3b974ec750dabb6",
+      "type": "expense",
+      "amount": 8.0,
+      "category": "Transporte",
+      "date": "2026-05-16",
+      "note": "Ap Valencia",
+      "createdAt": "2026-05-16T12:00:00.000Z"
+    },
+    {
+      "id": "bank-94f6f52c55384add",
+      "type": "expense",
+      "amount": 24.55,
+      "category": "Compras",
+      "date": "2026-05-15",
+      "note": "Undecimo",
+      "createdAt": "2026-05-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-cd00cb8ddc08ecdd",
+      "type": "expense",
+      "amount": 9.0,
+      "category": "Regalos",
+      "date": "2026-05-15",
+      "note": "Bizum a Eire Jimenez Roman - Regalinchi",
+      "createdAt": "2026-05-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d7f1cf660a557e91",
+      "type": "income",
+      "amount": 5.99,
+      "category": "Bizum",
+      "date": "2026-05-15",
+      "note": "Bizum de Eric Faneca Abril - Bizum De Eric",
+      "createdAt": "2026-05-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-cf433db9e7f4270f",
+      "type": "expense",
+      "amount": 11.98,
+      "category": "Compras",
+      "date": "2026-05-15",
+      "note": "Decathlon San C",
+      "createdAt": "2026-05-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-0a4218aaff540047",
+      "type": "expense",
+      "amount": 19.14,
+      "category": "Comida",
+      "date": "2026-05-15",
+      "note": "Uber * Eats Pending",
+      "createdAt": "2026-05-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-151c2c8323cced88",
+      "type": "expense",
+      "amount": 35.95,
+      "category": "Compras",
+      "date": "2026-05-15",
+      "note": "Zara San Cugat",
+      "createdAt": "2026-05-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2112a18f2a1d8568",
+      "type": "income",
+      "amount": 1.25,
+      "category": "Bizum",
+      "date": "2026-05-15",
+      "note": "Bizum de Biel Ribas Navarro - Sin Concepto",
+      "createdAt": "2026-05-15T12:00:00.000Z"
+    },
+    {
+      "id": "bank-df80758a3fcedee6",
+      "type": "income",
+      "amount": 21.55,
+      "category": "Regalo",
+      "date": "2026-05-14",
+      "note": "Bizum de Judith Cozar Couso - Baby Shower",
+      "createdAt": "2026-05-14T12:00:00.000Z"
+    },
+    {
+      "id": "bank-00241ac28f6b7d11",
+      "type": "income",
+      "amount": 7.28,
+      "category": "Bizum",
+      "date": "2026-05-14",
+      "note": "Bizum de Mireia Garcia Perea - Padel",
+      "createdAt": "2026-05-14T12:00:00.000Z"
+    },
+    {
+      "id": "bank-55760c460fe6cca5",
+      "type": "expense",
+      "amount": 6.29,
+      "category": "Comida",
+      "date": "2026-05-13",
+      "note": "Carrefour Boroa",
+      "createdAt": "2026-05-13T12:00:00.000Z"
+    },
+    {
+      "id": "bank-693afa5f86479632",
+      "type": "expense",
+      "amount": 16.02,
+      "category": "Comida",
+      "date": "2026-05-13",
+      "note": "Uber * Eats Pending",
+      "createdAt": "2026-05-13T12:00:00.000Z"
+    },
+    {
+      "id": "bank-cf71f6c981c4721a",
+      "type": "expense",
+      "amount": 1.7,
+      "category": "Transporte",
+      "date": "2026-05-12",
+      "note": "Estacionament Z",
+      "createdAt": "2026-05-12T12:00:00.000Z"
+    },
+    {
+      "id": "bank-0be641095d055faa",
+      "type": "expense",
+      "amount": 4.22,
+      "category": "Comida",
+      "date": "2026-05-12",
+      "note": "Mcdonalds 72400347",
+      "createdAt": "2026-05-12T12:00:00.000Z"
+    },
+    {
+      "id": "bank-87b0fc6e9d23e32c",
+      "type": "expense",
+      "amount": 4.51,
+      "category": "Comida",
+      "date": "2026-05-11",
+      "note": "Mcdonalds 72400347",
+      "createdAt": "2026-05-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-13d4768e54717b6f",
+      "type": "expense",
+      "amount": 7.99,
+      "category": "Ocio",
+      "date": "2026-05-11",
+      "note": "Playtomic.io 8380da47",
+      "createdAt": "2026-05-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-578bd52b1fbf7b89",
+      "type": "expense",
+      "amount": 1.25,
+      "category": "Comida",
+      "date": "2026-05-11",
+      "note": "Coffee Capp By N And I",
+      "createdAt": "2026-05-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-8e81f7c91b6d4abb",
+      "type": "expense",
+      "amount": 1.25,
+      "category": "Comida",
+      "date": "2026-05-11",
+      "note": "Coffee Capp By N And I",
+      "createdAt": "2026-05-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-8de63c0159593ca6",
+      "type": "income",
+      "amount": 12.99,
+      "category": "Reembolso",
+      "date": "2026-05-11",
+      "note": "Devolución Apple.com/bill",
+      "createdAt": "2026-05-11T12:00:00.000Z"
+    },
+    {
+      "id": "bank-46dfb99233d52ebb",
+      "type": "income",
+      "amount": 1.6,
+      "category": "Bizum",
+      "date": "2026-05-10",
+      "note": "Bizum de Jorge De Egea Lopez - Bizum De Jorge",
+      "createdAt": "2026-05-10T12:00:00.000Z"
+    },
+    {
+      "id": "bank-d5c8e8282be02b89",
+      "type": "income",
+      "amount": 11.0,
+      "category": "Bizum",
+      "date": "2026-05-10",
+      "note": "Bizum de Eric Faneca Abril - Bizum De Eric",
+      "createdAt": "2026-05-10T12:00:00.000Z"
+    },
+    {
+      "id": "bank-4333e0a3074d59a7",
+      "type": "income",
+      "amount": 6.5,
+      "category": "Bizum",
+      "date": "2026-05-09",
+      "note": "Bizum de Mireia Garcia Perea - Bizum De Mireia",
+      "createdAt": "2026-05-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a856422ff39af535",
+      "type": "income",
+      "amount": 9.1,
+      "category": "Bizum",
+      "date": "2026-05-09",
+      "note": "Bizum de Jose Antonio Pavo Pacha - La Mireia Tirne Pecas",
+      "createdAt": "2026-05-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-00b9e231b5c9872c",
+      "type": "expense",
+      "amount": 20.5,
+      "category": "Comida",
+      "date": "2026-05-09",
+      "note": "Khan Doner",
+      "createdAt": "2026-05-09T12:00:00.000Z"
+    },
+    {
+      "id": "bank-873bc31a1ecf49df",
+      "type": "expense",
+      "amount": 40.0,
+      "category": "Transporte",
+      "date": "2026-05-08",
+      "note": "As Sagunto Nort",
+      "createdAt": "2026-05-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-9323886afd4a3a5f",
+      "type": "expense",
+      "amount": 33.0,
+      "category": "Regalos",
+      "date": "2026-05-08",
+      "note": "Bizum a Ana Cozar Arevalo - Flores Corona",
+      "createdAt": "2026-05-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-c75c6f66a4a5d3c9",
+      "type": "expense",
+      "amount": 31.25,
+      "category": "Viajes",
+      "date": "2026-05-08",
+      "note": "Trainline",
+      "createdAt": "2026-05-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-ad144a382c123582",
+      "type": "income",
+      "amount": 1.25,
+      "category": "Bizum",
+      "date": "2026-05-08",
+      "note": "Bizum de Biel Ribas Navarro - Sin Concepto",
+      "createdAt": "2026-05-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-27aa6b7cd4d92bce",
+      "type": "expense",
+      "amount": 2.59,
+      "category": "Comida",
+      "date": "2026-05-08",
+      "note": "Bizum a Joan Cebrian Gimenez - Lasaña",
+      "createdAt": "2026-05-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-3cd0458167afd412",
+      "type": "expense",
+      "amount": 4.24,
+      "category": "Comida",
+      "date": "2026-05-08",
+      "note": "Bizum a Biel Ribas Navarro - Huesitos",
+      "createdAt": "2026-05-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-e76f406517170502",
+      "type": "expense",
+      "amount": 48.9,
+      "category": "Recibos",
+      "date": "2026-05-08",
+      "note": "Viva Aqua Service",
+      "createdAt": "2026-05-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-6d002ce0f6d223dd",
+      "type": "expense",
+      "amount": 5.99,
+      "category": "Recibos",
+      "date": "2026-05-08",
+      "note": "PayPal",
+      "createdAt": "2026-05-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-503ecb8dabef3858",
+      "type": "expense",
+      "amount": 6.99,
+      "category": "Recibos",
+      "date": "2026-05-08",
+      "note": "PayPal",
+      "createdAt": "2026-05-08T12:00:00.000Z"
+    },
+    {
+      "id": "bank-97ca8b3ff8b629bf",
+      "type": "expense",
+      "amount": 1.05,
+      "category": "Compras",
+      "date": "2026-05-07",
+      "note": "Ab Servicios Selecta E",
+      "createdAt": "2026-05-07T12:00:00.000Z"
+    },
+    {
+      "id": "bank-56200f003abc0271",
+      "type": "expense",
+      "amount": 1.0,
+      "category": "Compras",
+      "date": "2026-05-07",
+      "note": "Ab Servicios Selecta E",
+      "createdAt": "2026-05-07T12:00:00.000Z"
+    },
+    {
+      "id": "bank-00388b0b9f561ff1",
+      "type": "expense",
+      "amount": 1.0,
+      "category": "Compras",
+      "date": "2026-05-07",
+      "note": "Ab Servicios Selecta E",
+      "createdAt": "2026-05-07T12:00:00.000Z"
+    },
+    {
+      "id": "bank-8b1090c07a793c13",
+      "type": "income",
+      "amount": 1.66,
+      "category": "Bizum",
+      "date": "2026-05-07",
+      "note": "Bizum de Noelia Hervas Alvarez - Iclou",
+      "createdAt": "2026-05-07T12:00:00.000Z"
+    },
+    {
+      "id": "bank-41da9afe3c63e477",
+      "type": "income",
+      "amount": 1.66,
+      "category": "Bizum",
+      "date": "2026-05-07",
+      "note": "Bizum de Naira Castro Millan - Icloud",
+      "createdAt": "2026-05-07T12:00:00.000Z"
+    },
+    {
+      "id": "bank-f03ce9dd387e6d09",
+      "type": "expense",
+      "amount": 40.0,
+      "category": "Regalos",
+      "date": "2026-05-07",
+      "note": "Bizum a Concepcion Cozar Arevalo - Flores Jorgepakieva",
+      "createdAt": "2026-05-07T12:00:00.000Z"
+    },
+    {
+      "id": "bank-00d4df2952b2ea8e",
+      "type": "expense",
+      "amount": 12.99,
+      "category": "Recibos",
+      "date": "2026-05-06",
+      "note": "Apple.com/bill",
+      "createdAt": "2026-05-06T12:00:00.000Z"
+    },
+    {
+      "id": "bank-4a81ea9acf0fec75",
+      "type": "expense",
+      "amount": 21.3,
+      "category": "Comida",
+      "date": "2026-05-06",
+      "note": "Bizum a Concepcion Cozar Arevalo - Comida Jorge Y Eva",
+      "createdAt": "2026-05-06T12:00:00.000Z"
+    },
+    {
+      "id": "bank-0b0ba7f752bdd4dc",
+      "type": "expense",
+      "amount": 12.3,
+      "category": "Salud",
+      "date": "2026-05-05",
+      "note": "Hospital De Pue",
+      "createdAt": "2026-05-05T12:00:00.000Z"
+    },
+    {
+      "id": "bank-2f38c191cc921ce7",
+      "type": "expense",
+      "amount": 8.42,
+      "category": "Transporte",
+      "date": "2026-05-04",
+      "note": "Aucat Bar Vallcarca S",
+      "createdAt": "2026-05-04T12:00:00.000Z"
+    },
+    {
+      "id": "bank-de91442cfc3922a9",
+      "type": "expense",
+      "amount": 9.99,
+      "category": "Recibos",
+      "date": "2026-05-04",
+      "note": "Apple.com/bill",
+      "createdAt": "2026-05-04T12:00:00.000Z"
+    },
+    {
+      "id": "bank-a4fa812682fa34d3",
+      "type": "expense",
+      "amount": 128.0,
+      "category": "Recibos",
+      "date": "2026-05-04",
+      "note": "Easy.trainingym.com",
+      "createdAt": "2026-05-04T12:00:00.000Z"
+    },
+    {
+      "id": "bank-1fde843526b6c598",
+      "type": "expense",
+      "amount": 100.0,
+      "category": "Compras",
+      "date": "2026-05-04",
+      "note": "Retirada de efectivo",
+      "createdAt": "2026-05-04T12:00:00.000Z"
+    },
+    {
+      "id": "bank-222ea771a69d8220",
+      "type": "expense",
+      "amount": 3.0,
+      "category": "Recibos",
+      "date": "2026-05-04",
+      "note": "Cruz Roja",
+      "createdAt": "2026-05-04T12:00:00.000Z"
+    },
+    {
+      "id": "bank-e527fffba41c21d7",
+      "type": "expense",
+      "amount": 276.79,
+      "category": "Recibos",
+      "date": "2026-05-04",
+      "note": "Sabadell Consumer Finance",
+      "createdAt": "2026-05-04T12:00:00.000Z"
+    },
+    {
+      "id": "bank-c54165856e9b6b00",
+      "type": "expense",
+      "amount": 2.0,
+      "category": "Comida",
+      "date": "2026-05-03",
+      "note": "Bizum a Monica Ballesteros Cozar - Xuxe",
+      "createdAt": "2026-05-03T12:00:00.000Z"
+    },
+    {
+      "id": "bank-8a4ede7da7aecb09",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "Compras",
+      "date": "2026-05-03",
+      "note": "El Florista Enc",
+      "createdAt": "2026-05-03T12:00:00.000Z"
+    }
+  ]
+}

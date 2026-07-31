@@ -3,6 +3,8 @@
 const STORAGE_KEY = "gastos-eva-data";
 const BACKUP_STORAGE_KEY = "gastos-eva-data-backup";
 const LEGACY_STORAGE_KEYS = ["gastos-eva-v2", "gastos-eva-v1"];
+const BUNDLED_DATA_FILE = "./initial-data.json";
+const BUNDLED_DATA_MARKER = "gastos-eva-bundled-2026-07-31-v1";
 
 const CATEGORIES = {
   expense: [
@@ -93,6 +95,46 @@ function loadMovements() {
   }
 
   return [];
+}
+
+
+async function importBundledMovements() {
+  try {
+    if (localStorage.getItem(BUNDLED_DATA_MARKER) === "done") return 0;
+
+    const response = await fetch(BUNDLED_DATA_FILE, { cache: "no-store" });
+    if (!response.ok) return 0;
+
+    const parsed = await response.json();
+    const imported = Array.isArray(parsed) ? parsed : parsed.movements;
+    if (!Array.isArray(imported)) return 0;
+
+    const existingIds = new Set(state.movements.map(item => item.id));
+    const existingFingerprints = new Set(
+      state.movements.map(item =>
+        `${item.date}|${item.type}|${Number(item.amount).toFixed(2)}|${String(item.note || "").trim().toLowerCase()}`
+      )
+    );
+
+    const valid = imported
+      .map(normalizeMovement)
+      .filter(Boolean)
+      .filter(item => {
+        const fingerprint =
+          `${item.date}|${item.type}|${Number(item.amount).toFixed(2)}|${String(item.note || "").trim().toLowerCase()}`;
+        return !existingIds.has(item.id) && !existingFingerprints.has(fingerprint);
+      });
+
+    if (valid.length) {
+      state.movements.push(...valid);
+      persistMovements();
+    }
+
+    localStorage.setItem(BUNDLED_DATA_MARKER, "done");
+    return valid.length;
+  } catch {
+    return 0;
+  }
 }
 
 function persistMovements() {
@@ -269,9 +311,10 @@ function showToast(message){clearTimeout(toastTimer);elements.toast.textContent=
 
 function registerServiceWorker(){if("serviceWorker"in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}));}
 
-function initialise(){
+async function initialise(){
   const month=currentMonth(); elements.summaryMonth.value=month;elements.historyMonth.value=month;elements.date.value=todayISO();
   setType("expense");populateHistoryCategories();
+  const importedCount = await importBundledMovements();
   $$(".nav-button").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.view)));
   $$("[data-go]").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.go)));
   $("#quickAddButton").addEventListener("click",()=>{resetForm();showView("add");});
@@ -286,5 +329,6 @@ function initialise(){
   elements.importInput.addEventListener("change",e=>importBackup(e.target.files[0]));
   $("#clearButton").addEventListener("click",clearAllData);
   renderSummary();renderHistory();registerServiceWorker();
+  if(importedCount) showToast(`${importedCount} movimientos del extracto añadidos`);
 }
 initialise();

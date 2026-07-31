@@ -420,6 +420,16 @@ h3 {
   width: 100%;
 }
 
+.settings-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.settings-actions .primary-button,
+.settings-actions .secondary-button {
+  width: 100%;
+}
+
 .file-button {
   position: relative;
   overflow: hidden;

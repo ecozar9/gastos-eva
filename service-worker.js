@@ -1,4 +1,4 @@
-const CACHE_NAME = "gastos-eva-cache-v1";
+const CACHE_NAME = "gastos-eva-cache-v2";
 const APP_FILES = [
   "./",
   "./index.html",

@@ -306,6 +306,81 @@ function saveExpense(event) {
   showToast(id ? "Cambios guardados" : "Gasto guardado");
 }
 
+function csvCell(value) {
+  const text = String(value ?? "");
+  return `"${text.replaceAll('"', '""')}"`;
+}
+
+function monthName(month) {
+  const [year, monthNumber] = month.split("-").map(Number);
+  return new Intl.DateTimeFormat("es-ES", {
+    month: "long",
+    year: "numeric",
+  }).format(new Date(year, monthNumber - 1, 1));
+}
+
+function excelNumber(value) {
+  return Number(value).toFixed(2).replace(".", ",");
+}
+
+function exportExcelSummary() {
+  const month = elements.summaryMonth.value || currentMonth();
+  const expenses = sortNewest(expensesForMonth(month));
+  const total = expenses.reduce((sum, expense) => sum + expense.amount, 0);
+
+  const totalsByCategory = expenses.reduce((result, expense) => {
+    result[expense.category] = (result[expense.category] || 0) + expense.amount;
+    return result;
+  }, {});
+
+  const rows = [
+    ["RESUMEN DE GASTOS"],
+    ["Mes", monthName(month)],
+    ["Total gastado (€)", excelNumber(total)],
+    ["Número de gastos", expenses.length],
+    [],
+    ["RESUMEN POR CATEGORÍA"],
+    ["Categoría", "Total (€)", "Porcentaje"],
+  ];
+
+  Object.entries(totalsByCategory)
+    .sort((a, b) => b[1] - a[1])
+    .forEach(([category, amount]) => {
+      const percentage = total > 0 ? `${((amount / total) * 100).toFixed(1).replace(".", ",")}%` : "0%";
+      rows.push([category, excelNumber(amount), percentage]);
+    });
+
+  rows.push(
+    [],
+    ["DETALLE DE GASTOS"],
+    ["Fecha", "Categoría", "Descripción", "Importe (€)"]
+  );
+
+  expenses.forEach((expense) => {
+    rows.push([
+      formatDate(expense.date),
+      expense.category,
+      expense.note?.trim() || "",
+      excelNumber(expense.amount),
+    ]);
+  });
+
+  const csv = `sep=;\r\n${rows
+    .map((row) => row.map(csvCell).join(";"))
+    .join("\r\n")}`;
+
+  const blob = new Blob(["\uFEFF", csv], {
+    type: "text/csv;charset=utf-8",
+  });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `resumen-gastos-${month}.csv`;
+  link.click();
+  URL.revokeObjectURL(url);
+  showToast("Resumen para Excel descargado");
+}
+
 function exportBackup() {
   const backup = {
     app: "Mis gastos",
@@ -440,6 +515,7 @@ function initialise() {
   });
 
   $("#exportButton").addEventListener("click", exportBackup);
+  $("#excelButton").addEventListener("click", exportExcelSummary);
   elements.importInput.addEventListener("change", (event) =>
     importBackup(event.target.files[0])
   );

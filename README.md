@@ -61,3 +61,13 @@ GitHub mostrará una dirección parecida a:
 - `manifest.webmanifest`: información para instalar la PWA.
 - `service-worker.js`: funcionamiento sin conexión.
 - `icons/`: iconos de la aplicación.
+
+## Descargar el resumen para Excel
+
+1. Elige el mes en la pantalla `Resumen`.
+2. Entra en la pestaña `Copia`.
+3. Pulsa `Descargar resumen para Excel`.
+4. Se descargará un archivo `.csv` con el resumen por categorías y el detalle del mes.
+5. El archivo se abre directamente con Microsoft Excel.
+
+El formato CSV evita instalar librerías adicionales y mantiene la aplicación sencilla y privada.

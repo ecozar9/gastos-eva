@@ -1,529 +1,243 @@
-const STORAGE_KEY = "gastos-eva-v1";
+const STORAGE_KEY = "gastos-eva-v2";
+const OLD_STORAGE_KEY = "gastos-eva-v1";
 
-const CATEGORY_ICONS = {
-  Comida: "🍽️",
-  Casa: "🏠",
-  Transporte: "🚗",
-  Ocio: "🎉",
-  Compras: "🛍️",
-  Salud: "💊",
-  Otros: "📌",
+const CATEGORIES = {
+  expense: [
+    ["Comida", "🍽️"], ["Casa", "🏠"], ["Transporte", "🚗"], ["Ocio", "🎉"],
+    ["Compras", "🛍️"], ["Salud", "💊"], ["Recibos", "🧾"], ["Otros", "📌"]
+  ],
+  income: [
+    ["Nómina", "💼"], ["Transferencia", "🏦"], ["Venta", "🏷️"],
+    ["Reembolso", "↩️"], ["Regalo", "🎁"], ["Otros ingresos", "💶"]
+  ]
 };
 
-const state = {
-  expenses: loadExpenses(),
-  activeView: "summary",
-};
-
+const ICONS = Object.fromEntries([...CATEGORIES.expense, ...CATEGORIES.income]);
+const state = { movements: loadMovements(), activeView: "summary" };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 
 const elements = {
-  form: $("#expenseForm"),
-  expenseId: $("#expenseId"),
-  amount: $("#amount"),
-  category: $("#category"),
-  date: $("#date"),
-  note: $("#note"),
-  formTitle: $("#formTitle"),
-  saveButton: $("#saveButton"),
-  cancelEditButton: $("#cancelEditButton"),
-  summaryMonth: $("#summaryMonth"),
-  historyMonth: $("#historyMonth"),
-  historyCategory: $("#historyCategory"),
-  monthTotal: $("#monthTotal"),
-  expenseCount: $("#expenseCount"),
-  categorySummary: $("#categorySummary"),
-  recentExpenses: $("#recentExpenses"),
-  historyExpenses: $("#historyExpenses"),
-  historyTotal: $("#historyTotal"),
-  toast: $("#toast"),
-  importInput: $("#importInput"),
+  form: $("#movementForm"), movementId: $("#movementId"), amount: $("#amount"),
+  category: $("#category"), date: $("#date"), note: $("#note"), formTitle: $("#formTitle"),
+  saveButton: $("#saveButton"), cancelEditButton: $("#cancelEditButton"),
+  summaryMonth: $("#summaryMonth"), historyMonth: $("#historyMonth"), historyType: $("#historyType"),
+  historyCategory: $("#historyCategory"), monthBalance: $("#monthBalance"),
+  monthIncome: $("#monthIncome"), monthExpenses: $("#monthExpenses"), movementCount: $("#movementCount"),
+  categorySummary: $("#categorySummary"), recentMovements: $("#recentMovements"),
+  historyMovements: $("#historyMovements"), historyIncome: $("#historyIncome"),
+  historyExpenses: $("#historyExpenses"), historyBalance: $("#historyBalance"),
+  toast: $("#toast"), importInput: $("#importInput")
 };
 
-function loadExpenses() {
+function normalizeMovement(item) {
+  if (!item || typeof item !== "object") return null;
+  const amount = Number(item.amount);
+  if (!Number.isFinite(amount) || amount <= 0 || typeof item.date !== "string") return null;
+  return {
+    id: typeof item.id === "string" ? item.id : crypto.randomUUID(),
+    type: item.type === "income" ? "income" : "expense",
+    amount: Math.round(amount * 100) / 100,
+    category: typeof item.category === "string" ? item.category : "Otros",
+    date: item.date,
+    note: typeof item.note === "string" ? item.note : "",
+    createdAt: typeof item.createdAt === "string" ? item.createdAt : new Date().toISOString()
+  };
+}
+
+function loadMovements() {
   try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-    return Array.isArray(saved) ? saved : [];
-  } catch {
-    return [];
-  }
+    const current = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+    if (Array.isArray(current)) return current.map(normalizeMovement).filter(Boolean);
+    const old = JSON.parse(localStorage.getItem(OLD_STORAGE_KEY) || "[]");
+    if (Array.isArray(old) && old.length) {
+      const migrated = old.map(normalizeMovement).filter(Boolean);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(migrated));
+      return migrated;
+    }
+  } catch {}
+  return [];
 }
 
-function persistExpenses() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state.expenses));
+function persistMovements() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state.movements)); }
+function todayISO() { const d=new Date(); return new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10); }
+function currentMonth() { return todayISO().slice(0,7); }
+function formatMoney(v) { return new Intl.NumberFormat("es-ES",{style:"currency",currency:"EUR"}).format(v); }
+function formatDate(s) { return new Intl.DateTimeFormat("es-ES",{day:"numeric",month:"short",year:"numeric"}).format(new Date(`${s}T12:00:00`)); }
+function parseAmount(raw) { const n=Number(raw.trim().replace(/\s/g,"").replace(",",".")); return Number.isFinite(n)?Math.round(n*100)/100:NaN; }
+function escapeHTML(v="") { return v.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;"); }
+function sortNewest(items) { return [...items].sort((a,b)=>b.date.localeCompare(a.date)||(b.createdAt||"").localeCompare(a.createdAt||"")); }
+function selectedType() { return $("input[name='movementType']:checked").value; }
+
+function setType(type, selectedCategory="") {
+  const radio = $(`input[name='movementType'][value='${type}']`);
+  if (radio) radio.checked = true;
+  elements.category.innerHTML = CATEGORIES[type].map(([name,icon])=>`<option value="${name}">${icon} ${name}</option>`).join("");
+  if (selectedCategory && [...elements.category.options].some(o=>o.value===selectedCategory)) elements.category.value=selectedCategory;
+  elements.note.placeholder = type === "income" ? "Ej.: nómina de julio" : "Ej.: compra del supermercado";
 }
 
-function todayISO() {
-  const now = new Date();
-  const offset = now.getTimezoneOffset();
-  return new Date(now.getTime() - offset * 60_000).toISOString().slice(0, 10);
+function populateHistoryCategories() {
+  elements.historyCategory.innerHTML = '<option value="">Todas las categorías</option>' +
+    [...CATEGORIES.expense,...CATEGORIES.income].map(([name])=>name).filter((v,i,a)=>a.indexOf(v)===i)
+      .map(name=>`<option value="${name}">${ICONS[name]||"📌"} ${name}</option>`).join("");
 }
 
-function currentMonth() {
-  return todayISO().slice(0, 7);
+function totals(items) {
+  const income = items.filter(x=>x.type==="income").reduce((s,x)=>s+x.amount,0);
+  const expenses = items.filter(x=>x.type==="expense").reduce((s,x)=>s+x.amount,0);
+  return { income, expenses, balance: income-expenses };
 }
 
-function formatMoney(value) {
-  return new Intl.NumberFormat("es-ES", {
-    style: "currency",
-    currency: "EUR",
-  }).format(value);
-}
-
-function formatDate(dateString) {
-  return new Intl.DateTimeFormat("es-ES", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  }).format(new Date(`${dateString}T12:00:00`));
-}
-
-function parseAmount(rawValue) {
-  const normalized = rawValue.trim().replace(/\s/g, "").replace(",", ".");
-  const number = Number(normalized);
-  return Number.isFinite(number) ? Math.round(number * 100) / 100 : NaN;
-}
-
-function escapeHTML(value = "") {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-function sortNewest(expenses) {
-  return [...expenses].sort((a, b) => {
-    const dateDifference = b.date.localeCompare(a.date);
-    return dateDifference || (b.createdAt || "").localeCompare(a.createdAt || "");
-  });
-}
-
-function expensesForMonth(month) {
-  return state.expenses.filter((expense) => expense.date.startsWith(month));
-}
-
-function showView(viewName) {
-  state.activeView = viewName;
-
-  $$(".view").forEach((view) => {
-    view.classList.toggle("active", view.id === `view-${viewName}`);
-  });
-
-  $$(".nav-button").forEach((button) => {
-    button.classList.toggle("active", button.dataset.view === viewName);
-  });
-
-  if (viewName === "summary") renderSummary();
-  if (viewName === "history") renderHistory();
-  if (viewName === "add" && !elements.expenseId.value) elements.amount.focus();
-
-  window.scrollTo({ top: 0, behavior: "smooth" });
+function showView(name) {
+  state.activeView=name;
+  $$(".view").forEach(v=>v.classList.toggle("active",v.id===`view-${name}`));
+  $$(".nav-button").forEach(b=>b.classList.toggle("active",b.dataset.view===name));
+  if(name==="summary") renderSummary();
+  if(name==="history") renderHistory();
+  if(name==="add"&&!elements.movementId.value) setTimeout(()=>elements.amount.focus(),50);
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function renderSummary() {
-  const selectedMonth = elements.summaryMonth.value || currentMonth();
-  const expenses = sortNewest(expensesForMonth(selectedMonth));
-  const total = expenses.reduce((sum, expense) => sum + expense.amount, 0);
-
-  elements.monthTotal.textContent = formatMoney(total);
-  elements.expenseCount.textContent =
-    expenses.length === 0
-      ? "Todavía no hay gastos"
-      : `${expenses.length} ${expenses.length === 1 ? "gasto registrado" : "gastos registrados"}`;
-
-  renderCategorySummary(expenses, total);
-  renderExpenseList(elements.recentExpenses, expenses.slice(0, 5), {
-    emptyMessage: "Todavía no has añadido gastos este mes.",
-    showActions: false,
-  });
+  const month=elements.summaryMonth.value||currentMonth();
+  const items=sortNewest(state.movements.filter(x=>x.date.startsWith(month)));
+  const t=totals(items);
+  elements.monthIncome.textContent=formatMoney(t.income);
+  elements.monthExpenses.textContent=formatMoney(t.expenses);
+  elements.monthBalance.textContent=formatMoney(t.balance);
+  elements.movementCount.textContent=items.length===0?"Todavía no hay movimientos":`${items.length} ${items.length===1?"movimiento":"movimientos"}`;
+  renderCategorySummary(items.filter(x=>x.type==="expense"),t.expenses);
+  renderMovementList(elements.recentMovements,items.slice(0,5),{emptyMessage:"Todavía no has añadido movimientos este mes.",showActions:false});
 }
 
-function renderCategorySummary(expenses, total) {
-  const totals = expenses.reduce((result, expense) => {
-    result[expense.category] = (result[expense.category] || 0) + expense.amount;
-    return result;
-  }, {});
-
-  const rows = Object.entries(totals).sort((a, b) => b[1] - a[1]);
-
-  if (rows.length === 0) {
-    elements.categorySummary.innerHTML =
-      '<div class="empty-state">Aquí aparecerá el reparto por categorías.</div>';
-    return;
-  }
-
-  elements.categorySummary.innerHTML = rows
-    .map(([category, amount]) => {
-      const percentage = total > 0 ? (amount / total) * 100 : 0;
-      return `
-        <div class="category-row">
-          <span class="category-name">${CATEGORY_ICONS[category] || "📌"} ${escapeHTML(category)}</span>
-          <div class="category-bar" aria-label="${percentage.toFixed(0)}%">
-            <span style="width:${Math.max(percentage, 3)}%"></span>
-          </div>
-          <span class="category-value">${formatMoney(amount)}</span>
-        </div>
-      `;
-    })
-    .join("");
+function renderCategorySummary(items,total) {
+  const grouped=items.reduce((r,x)=>{r[x.category]=(r[x.category]||0)+x.amount;return r;},{});
+  const rows=Object.entries(grouped).sort((a,b)=>b[1]-a[1]);
+  if(!rows.length){elements.categorySummary.innerHTML='<div class="empty-state">Aquí aparecerá el reparto de tus gastos.</div>';return;}
+  elements.categorySummary.innerHTML=rows.map(([category,amount])=>{
+    const p=total?amount/total*100:0;
+    return `<div class="category-row"><span class="category-name">${ICONS[category]||"📌"} ${escapeHTML(category)}</span><div class="category-bar"><span style="width:${Math.max(p,3)}%"></span></div><span class="category-value">${formatMoney(amount)}</span></div>`;
+  }).join("");
 }
 
 function renderHistory() {
-  const month = elements.historyMonth.value;
-  const category = elements.historyCategory.value;
-
-  const filtered = sortNewest(
-    state.expenses.filter((expense) => {
-      const matchesMonth = !month || expense.date.startsWith(month);
-      const matchesCategory = !category || expense.category === category;
-      return matchesMonth && matchesCategory;
-    })
-  );
-
-  const total = filtered.reduce((sum, expense) => sum + expense.amount, 0);
-  elements.historyTotal.textContent = formatMoney(total);
-
-  renderExpenseList(elements.historyExpenses, filtered, {
-    emptyMessage: "No hay gastos con estos filtros.",
-    showActions: true,
-  });
+  const month=elements.historyMonth.value, type=elements.historyType.value, category=elements.historyCategory.value;
+  const filtered=sortNewest(state.movements.filter(x=>(!month||x.date.startsWith(month))&&(!type||x.type===type)&&(!category||x.category===category)));
+  const t=totals(filtered);
+  elements.historyIncome.textContent=formatMoney(t.income);
+  elements.historyExpenses.textContent=formatMoney(t.expenses);
+  elements.historyBalance.textContent=formatMoney(t.balance);
+  renderMovementList(elements.historyMovements,filtered,{emptyMessage:"No hay movimientos con estos filtros.",showActions:true});
 }
 
-function renderExpenseList(container, expenses, options) {
-  if (expenses.length === 0) {
-    container.innerHTML = `<div class="empty-state">${options.emptyMessage}</div>`;
-    return;
-  }
-
-  container.innerHTML = expenses
-    .map((expense) => {
-      const description = expense.note?.trim() || expense.category;
-      const actions = options.showActions
-        ? `
-          <div class="expense-actions">
-            <button class="small-button" type="button" data-action="edit" data-id="${expense.id}">Editar</button>
-            <button class="small-button delete" type="button" data-action="delete" data-id="${expense.id}">Borrar</button>
-          </div>
-        `
-        : "";
-
-      return `
-        <article class="expense-item">
-          <div class="expense-main">
-            <div class="expense-info">
-              <strong>${CATEGORY_ICONS[expense.category] || "📌"} ${escapeHTML(description)}</strong>
-              <span>${escapeHTML(expense.category)} · ${formatDate(expense.date)}</span>
-            </div>
-            <span class="expense-amount">−${formatMoney(expense.amount)}</span>
-          </div>
-          ${actions}
-        </article>
-      `;
-    })
-    .join("");
+function renderMovementList(container,items,options) {
+  if(!items.length){container.innerHTML=`<div class="empty-state">${options.emptyMessage}</div>`;return;}
+  container.innerHTML=items.map(x=>{
+    const description=x.note?.trim()||x.category, isIncome=x.type==="income", sign=isIncome?"+":"−";
+    const actions=options.showActions?`<div class="movement-actions"><button class="small-button" type="button" data-action="edit" data-id="${x.id}">Editar</button><button class="small-button delete" type="button" data-action="delete" data-id="${x.id}">Borrar</button></div>`:"";
+    return `<article class="movement-item"><div class="movement-main"><div class="movement-info"><strong>${ICONS[x.category]||"📌"} ${escapeHTML(description)}</strong><span>${isIncome?"Ingreso":"Gasto"} · ${escapeHTML(x.category)} · ${formatDate(x.date)}</span></div><span class="movement-amount ${x.type}">${sign}${formatMoney(x.amount)}</span></div>${actions}</article>`;
+  }).join("");
 }
 
 function resetForm() {
-  elements.form.reset();
-  elements.expenseId.value = "";
-  elements.date.value = todayISO();
-  elements.category.value = "Comida";
-  elements.formTitle.textContent = "Añadir gasto";
-  elements.saveButton.textContent = "Guardar gasto";
+  elements.form.reset(); elements.movementId.value=""; elements.date.value=todayISO();
+  setType("expense"); elements.formTitle.textContent="Añadir movimiento"; elements.saveButton.textContent="Guardar movimiento";
   elements.cancelEditButton.classList.add("hidden");
 }
 
 function startEdit(id) {
-  const expense = state.expenses.find((item) => item.id === id);
-  if (!expense) return;
-
-  elements.expenseId.value = expense.id;
-  elements.amount.value = String(expense.amount).replace(".", ",");
-  elements.category.value = expense.category;
-  elements.date.value = expense.date;
-  elements.note.value = expense.note || "";
-  elements.formTitle.textContent = "Editar gasto";
-  elements.saveButton.textContent = "Guardar cambios";
-  elements.cancelEditButton.classList.remove("hidden");
-  showView("add");
+  const x=state.movements.find(i=>i.id===id); if(!x)return;
+  elements.movementId.value=x.id; setType(x.type,x.category); elements.amount.value=String(x.amount).replace(".",",");
+  elements.date.value=x.date; elements.note.value=x.note||""; elements.formTitle.textContent="Editar movimiento";
+  elements.saveButton.textContent="Guardar cambios"; elements.cancelEditButton.classList.remove("hidden"); showView("add");
 }
 
-function deleteExpense(id) {
-  const expense = state.expenses.find((item) => item.id === id);
-  if (!expense) return;
-
-  const accepted = window.confirm(
-    `¿Quieres borrar el gasto de ${formatMoney(expense.amount)}?`
-  );
-
-  if (!accepted) return;
-
-  state.expenses = state.expenses.filter((item) => item.id !== id);
-  persistExpenses();
-  renderSummary();
-  renderHistory();
-  showToast("Gasto borrado");
+function deleteMovement(id) {
+  const x=state.movements.find(i=>i.id===id); if(!x)return;
+  if(!confirm(`¿Quieres borrar este ${x.type==="income"?"ingreso":"gasto"} de ${formatMoney(x.amount)}?`))return;
+  state.movements=state.movements.filter(i=>i.id!==id); persistMovements(); renderSummary(); renderHistory(); showToast("Movimiento borrado");
 }
 
-function saveExpense(event) {
+function saveMovement(event) {
   event.preventDefault();
-
-  const amount = parseAmount(elements.amount.value);
-  if (!Number.isFinite(amount) || amount <= 0) {
-    showToast("Introduce una cantidad válida");
-    elements.amount.focus();
-    return;
-  }
-
-  const id = elements.expenseId.value;
-  const expenseData = {
-    id: id || crypto.randomUUID(),
-    amount,
-    category: elements.category.value,
-    date: elements.date.value,
-    note: elements.note.value.trim(),
-    createdAt: id
-      ? state.expenses.find((expense) => expense.id === id)?.createdAt || new Date().toISOString()
-      : new Date().toISOString(),
-  };
-
-  if (id) {
-    state.expenses = state.expenses.map((expense) =>
-      expense.id === id ? expenseData : expense
-    );
-  } else {
-    state.expenses.push(expenseData);
-  }
-
-  persistExpenses();
-  resetForm();
-  renderSummary();
-  renderHistory();
-  showView("summary");
-  showToast(id ? "Cambios guardados" : "Gasto guardado");
+  const amount=parseAmount(elements.amount.value); if(!Number.isFinite(amount)||amount<=0){showToast("Introduce una cantidad válida");elements.amount.focus();return;}
+  const id=elements.movementId.value, old=state.movements.find(x=>x.id===id);
+  const data={id:id||crypto.randomUUID(),type:selectedType(),amount,category:elements.category.value,date:elements.date.value,note:elements.note.value.trim(),createdAt:old?.createdAt||new Date().toISOString()};
+  state.movements=id?state.movements.map(x=>x.id===id?data:x):[...state.movements,data];
+  persistMovements(); resetForm(); renderSummary(); renderHistory(); showView("summary"); showToast(id?"Cambios guardados":"Movimiento guardado");
 }
 
-function csvCell(value) {
-  const text = String(value ?? "");
-  return `"${text.replaceAll('"', '""')}"`;
-}
-
-function monthName(month) {
-  const [year, monthNumber] = month.split("-").map(Number);
-  return new Intl.DateTimeFormat("es-ES", {
-    month: "long",
-    year: "numeric",
-  }).format(new Date(year, monthNumber - 1, 1));
-}
-
-function excelNumber(value) {
-  return Number(value).toFixed(2).replace(".", ",");
-}
+function csvCell(value) { const s=String(value??""); return `"${s.replaceAll('"','""')}"`; }
+function excelNumber(value) { return Number(value).toFixed(2).replace(".",","); }
 
 function exportExcelSummary() {
-  const month = elements.summaryMonth.value || currentMonth();
-  const expenses = sortNewest(expensesForMonth(month));
-  const total = expenses.reduce((sum, expense) => sum + expense.amount, 0);
-
-  const totalsByCategory = expenses.reduce((result, expense) => {
-    result[expense.category] = (result[expense.category] || 0) + expense.amount;
-    return result;
-  }, {});
-
-  const rows = [
-    ["RESUMEN DE GASTOS"],
-    ["Mes", monthName(month)],
-    ["Total gastado (€)", excelNumber(total)],
-    ["Número de gastos", expenses.length],
-    [],
-    ["RESUMEN POR CATEGORÍA"],
-    ["Categoría", "Total (€)", "Porcentaje"],
-  ];
-
-  Object.entries(totalsByCategory)
-    .sort((a, b) => b[1] - a[1])
-    .forEach(([category, amount]) => {
-      const percentage = total > 0 ? `${((amount / total) * 100).toFixed(1).replace(".", ",")}%` : "0%";
-      rows.push([category, excelNumber(amount), percentage]);
-    });
-
-  rows.push(
-    [],
-    ["DETALLE DE GASTOS"],
-    ["Fecha", "Categoría", "Descripción", "Importe (€)"]
-  );
-
-  expenses.forEach((expense) => {
-    rows.push([
-      formatDate(expense.date),
-      expense.category,
-      expense.note?.trim() || "",
-      excelNumber(expense.amount),
-    ]);
-  });
-
-  const csv = `sep=;\r\n${rows
-    .map((row) => row.map(csvCell).join(";"))
-    .join("\r\n")}`;
-
-  const blob = new Blob(["\uFEFF", csv], {
-    type: "text/csv;charset=utf-8",
-  });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `resumen-gastos-${month}.csv`;
-  link.click();
-  URL.revokeObjectURL(url);
-  showToast("Resumen para Excel descargado");
+  const month=elements.summaryMonth.value||currentMonth();
+  const items=sortNewest(state.movements.filter(x=>x.date.startsWith(month)));
+  const t=totals(items);
+  const expenseGroups=items.filter(x=>x.type==="expense").reduce((r,x)=>{r[x.category]=(r[x.category]||0)+x.amount;return r;},{});
+  const incomeGroups=items.filter(x=>x.type==="income").reduce((r,x)=>{r[x.category]=(r[x.category]||0)+x.amount;return r;},{});
+  const rows=[];
+  rows.push(["RESUMEN MENSUAL",month]); rows.push([]);
+  rows.push(["Ingresos",excelNumber(t.income)]); rows.push(["Gastos",excelNumber(t.expenses)]); rows.push(["Saldo",excelNumber(t.balance)]); rows.push(["Número de movimientos",items.length]); rows.push([]);
+  rows.push(["INGRESOS POR CATEGORÍA","Importe"]);
+  Object.entries(incomeGroups).sort((a,b)=>b[1]-a[1]).forEach(([c,a])=>rows.push([c,excelNumber(a)]));
+  rows.push([]); rows.push(["GASTOS POR CATEGORÍA","Importe"]);
+  Object.entries(expenseGroups).sort((a,b)=>b[1]-a[1]).forEach(([c,a])=>rows.push([c,excelNumber(a)]));
+  rows.push([]); rows.push(["DETALLE","Tipo","Categoría","Descripción","Importe"]);
+  items.forEach(x=>rows.push([x.date,x.type==="income"?"Ingreso":"Gasto",x.category,x.note||"",excelNumber(x.amount)]));
+  const csv="\uFEFF"+rows.map(row=>row.map(csvCell).join(";")).join("\r\n");
+  downloadBlob(new Blob([csv],{type:"text/csv;charset=utf-8;"}),`resumen-finanzas-${month}.csv`);
+  showToast("Resumen descargado");
 }
 
 function exportBackup() {
-  const backup = {
-    app: "Mis gastos",
-    version: 1,
-    exportedAt: new Date().toISOString(),
-    expenses: state.expenses,
-  };
-
-  const blob = new Blob([JSON.stringify(backup, null, 2)], {
-    type: "application/json",
-  });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `copia-gastos-${todayISO()}.json`;
-  link.click();
-  URL.revokeObjectURL(url);
+  const data={app:"Mis finanzas",version:2,exportedAt:new Date().toISOString(),movements:state.movements};
+  downloadBlob(new Blob([JSON.stringify(data,null,2)],{type:"application/json"}),`copia-finanzas-${todayISO()}.json`);
   showToast("Copia descargada");
 }
 
+function downloadBlob(blob,filename) { const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),500); }
+
 async function importBackup(file) {
-  if (!file) return;
-
+  if(!file)return;
   try {
-    const text = await file.text();
-    const parsed = JSON.parse(text);
-    const importedExpenses = Array.isArray(parsed) ? parsed : parsed.expenses;
-
-    if (!Array.isArray(importedExpenses)) {
-      throw new Error("Formato no válido");
-    }
-
-    const existingIds = new Set(state.expenses.map((expense) => expense.id));
-    const validExpenses = importedExpenses.filter(
-      (expense) =>
-        expense &&
-        typeof expense.id === "string" &&
-        typeof expense.amount === "number" &&
-        typeof expense.category === "string" &&
-        typeof expense.date === "string" &&
-        !existingIds.has(expense.id)
-    );
-
-    state.expenses.push(...validExpenses);
-    persistExpenses();
-    renderSummary();
-    renderHistory();
-    elements.importInput.value = "";
-    showToast(`${validExpenses.length} gastos importados`);
-  } catch {
-    elements.importInput.value = "";
-    showToast("No se ha podido importar la copia");
-  }
+    const parsed=JSON.parse(await file.text());
+    const imported=Array.isArray(parsed)?parsed:(parsed.movements||parsed.expenses);
+    if(!Array.isArray(imported))throw new Error();
+    const ids=new Set(state.movements.map(x=>x.id));
+    const valid=imported.map(normalizeMovement).filter(x=>x&&!ids.has(x.id));
+    state.movements.push(...valid); persistMovements(); renderSummary(); renderHistory(); elements.importInput.value=""; showToast(`${valid.length} movimientos importados`);
+  } catch { elements.importInput.value=""; showToast("No se ha podido importar la copia"); }
 }
 
 function clearAllData() {
-  if (state.expenses.length === 0) {
-    showToast("No hay datos para borrar");
-    return;
-  }
-
-  const accepted = window.confirm(
-    "¿Seguro que quieres borrar todos los gastos? Esta acción no se puede deshacer."
-  );
-
-  if (!accepted) return;
-
-  state.expenses = [];
-  persistExpenses();
-  resetForm();
-  renderSummary();
-  renderHistory();
-  showView("summary");
-  showToast("Todos los datos se han borrado");
+  if(!state.movements.length){showToast("No hay datos para borrar");return;}
+  if(!confirm("¿Seguro que quieres borrar todos los gastos e ingresos?"))return;
+  state.movements=[];persistMovements();resetForm();renderSummary();renderHistory();showView("summary");showToast("Todos los datos se han borrado");
 }
 
-let toastTimeout;
-function showToast(message) {
-  clearTimeout(toastTimeout);
-  elements.toast.textContent = message;
-  elements.toast.classList.add("visible");
-  toastTimeout = setTimeout(() => {
-    elements.toast.classList.remove("visible");
-  }, 2200);
+let toastTimer;
+function showToast(message){clearTimeout(toastTimer);elements.toast.textContent=message;elements.toast.classList.add("visible");toastTimer=setTimeout(()=>elements.toast.classList.remove("visible"),2200);}
+
+function registerServiceWorker(){if("serviceWorker"in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}));}
+
+function initialise(){
+  const month=currentMonth(); elements.summaryMonth.value=month;elements.historyMonth.value=month;elements.date.value=todayISO();
+  setType("expense");populateHistoryCategories();
+  $$(".nav-button").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.view)));
+  $$("[data-go]").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.go)));
+  $("#quickAddButton").addEventListener("click",()=>{resetForm();showView("add");});
+  $$("input[name='movementType']").forEach(r=>r.addEventListener("change",()=>setType(r.value)));
+  elements.form.addEventListener("submit",saveMovement);
+  elements.cancelEditButton.addEventListener("click",()=>{resetForm();showView("history");});
+  elements.summaryMonth.addEventListener("change",renderSummary);
+  [elements.historyMonth,elements.historyType,elements.historyCategory].forEach(e=>e.addEventListener("change",renderHistory));
+  elements.historyMovements.addEventListener("click",event=>{const b=event.target.closest("[data-action]");if(!b)return;b.dataset.action==="edit"?startEdit(b.dataset.id):deleteMovement(b.dataset.id);});
+  $("#excelButton").addEventListener("click",exportExcelSummary);
+  $("#exportButton").addEventListener("click",exportBackup);
+  elements.importInput.addEventListener("change",e=>importBackup(e.target.files[0]));
+  $("#clearButton").addEventListener("click",clearAllData);
+  renderSummary();renderHistory();registerServiceWorker();
 }
-
-function registerServiceWorker() {
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./service-worker.js").catch(() => {
-        // La aplicación sigue funcionando aunque el modo sin conexión falle.
-      });
-    });
-  }
-}
-
-function initialise() {
-  const month = currentMonth();
-  elements.summaryMonth.value = month;
-  elements.historyMonth.value = month;
-  elements.date.value = todayISO();
-
-  $$(".nav-button").forEach((button) => {
-    button.addEventListener("click", () => showView(button.dataset.view));
-  });
-
-  $$("[data-go]").forEach((button) => {
-    button.addEventListener("click", () => showView(button.dataset.go));
-  });
-
-  $("#quickAddButton").addEventListener("click", () => {
-    resetForm();
-    showView("add");
-  });
-
-  elements.form.addEventListener("submit", saveExpense);
-  elements.cancelEditButton.addEventListener("click", () => {
-    resetForm();
-    showView("history");
-  });
-
-  elements.summaryMonth.addEventListener("change", renderSummary);
-  elements.historyMonth.addEventListener("change", renderHistory);
-  elements.historyCategory.addEventListener("change", renderHistory);
-
-  elements.historyExpenses.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-action]");
-    if (!button) return;
-
-    if (button.dataset.action === "edit") startEdit(button.dataset.id);
-    if (button.dataset.action === "delete") deleteExpense(button.dataset.id);
-  });
-
-  $("#exportButton").addEventListener("click", exportBackup);
-  $("#excelButton").addEventListener("click", exportExcelSummary);
-  elements.importInput.addEventListener("change", (event) =>
-    importBackup(event.target.files[0])
-  );
-  $("#clearButton").addEventListener("click", clearAllData);
-
-  renderSummary();
-  renderHistory();
-  registerServiceWorker();
-}
-
 initialise();

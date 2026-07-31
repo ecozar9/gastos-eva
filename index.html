@@ -6,22 +6,22 @@
   <meta name="theme-color" content="#f7f4ef" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="apple-mobile-web-app-title" content="Mis gastos" />
-  <meta name="description" content="Aplicación sencilla para registrar y consultar gastos personales." />
+  <meta name="apple-mobile-web-app-title" content="Mis finanzas" />
+  <meta name="description" content="Aplicación sencilla para registrar gastos e ingresos." />
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="apple-touch-icon" href="./icons/icon-192.png" />
   <link rel="icon" href="./icons/icon-192.png" />
   <link rel="stylesheet" href="./style.css" />
-  <title>Mis gastos</title>
+  <title>Mis finanzas</title>
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
       <div>
         <p class="eyebrow">CONTROL PERSONAL</p>
-        <h1>Mis gastos</h1>
+        <h1>Mis finanzas</h1>
       </div>
-      <button id="quickAddButton" class="icon-button" type="button" aria-label="Añadir gasto">＋</button>
+      <button id="quickAddButton" class="icon-button" type="button" aria-label="Añadir movimiento">＋</button>
     </header>
 
     <main>
@@ -34,36 +34,59 @@
           <input id="summaryMonth" class="month-input" type="month" aria-label="Mes del resumen" />
         </div>
 
-        <article class="total-card">
-          <span>Total gastado</span>
-          <strong id="monthTotal">0,00 €</strong>
-          <small id="expenseCount">Todavía no hay gastos</small>
+        <article class="balance-card">
+          <span>Saldo del mes</span>
+          <strong id="monthBalance">0,00 €</strong>
+          <small id="movementCount">Todavía no hay movimientos</small>
         </article>
+
+        <div class="summary-grid">
+          <article class="summary-card income-card">
+            <span>Ingresos</span>
+            <strong id="monthIncome">0,00 €</strong>
+          </article>
+          <article class="summary-card expense-card">
+            <span>Gastos</span>
+            <strong id="monthExpenses">0,00 €</strong>
+          </article>
+        </div>
 
         <section class="panel">
           <div class="panel-heading">
-            <h3>Por categorías</h3>
+            <h3>Gastos por categorías</h3>
           </div>
           <div id="categorySummary" class="category-summary"></div>
         </section>
 
         <section class="panel">
           <div class="panel-heading">
-            <h3>Últimos gastos</h3>
+            <h3>Últimos movimientos</h3>
             <button class="text-button" type="button" data-go="history">Ver todos</button>
           </div>
-          <div id="recentExpenses" class="expense-list"></div>
+          <div id="recentMovements" class="movement-list"></div>
         </section>
       </section>
 
       <section id="view-add" class="view" aria-labelledby="formTitle">
         <div class="section-heading">
           <p class="muted">Nuevo movimiento</p>
-          <h2 id="formTitle">Añadir gasto</h2>
+          <h2 id="formTitle">Añadir movimiento</h2>
         </div>
 
-        <form id="expenseForm" class="expense-form">
-          <input id="expenseId" type="hidden" />
+        <form id="movementForm" class="movement-form">
+          <input id="movementId" type="hidden" />
+
+          <fieldset class="type-selector">
+            <legend>Tipo</legend>
+            <label>
+              <input type="radio" name="movementType" value="expense" checked />
+              <span>Gasto</span>
+            </label>
+            <label>
+              <input type="radio" name="movementType" value="income" />
+              <span>Ingreso</span>
+            </label>
+          </fieldset>
 
           <label>
             Cantidad
@@ -75,15 +98,7 @@
 
           <label>
             Categoría
-            <select id="category" required>
-              <option value="Comida">🍽️ Comida</option>
-              <option value="Casa">🏠 Casa</option>
-              <option value="Transporte">🚗 Transporte</option>
-              <option value="Ocio">🎉 Ocio</option>
-              <option value="Compras">🛍️ Compras</option>
-              <option value="Salud">💊 Salud</option>
-              <option value="Otros">📌 Otros</option>
-            </select>
+            <select id="category" required></select>
           </label>
 
           <label>
@@ -93,10 +108,10 @@
 
           <label>
             Descripción <span class="optional">(opcional)</span>
-            <input id="note" type="text" maxlength="80" placeholder="Ej.: compra del supermercado" />
+            <input id="note" type="text" maxlength="80" placeholder="Ej.: nómina de julio" />
           </label>
 
-          <button id="saveButton" class="primary-button" type="submit">Guardar gasto</button>
+          <button id="saveButton" class="primary-button" type="submit">Guardar movimiento</button>
           <button id="cancelEditButton" class="secondary-button hidden" type="button">Cancelar edición</button>
         </form>
       </section>
@@ -109,44 +124,46 @@
 
         <div class="filters">
           <input id="historyMonth" type="month" aria-label="Filtrar por mes" />
+          <select id="historyType" aria-label="Filtrar por tipo">
+            <option value="">Gastos e ingresos</option>
+            <option value="expense">Solo gastos</option>
+            <option value="income">Solo ingresos</option>
+          </select>
           <select id="historyCategory" aria-label="Filtrar por categoría">
             <option value="">Todas las categorías</option>
-            <option value="Comida">Comida</option>
-            <option value="Casa">Casa</option>
-            <option value="Transporte">Transporte</option>
-            <option value="Ocio">Ocio</option>
-            <option value="Compras">Compras</option>
-            <option value="Salud">Salud</option>
-            <option value="Otros">Otros</option>
           </select>
         </div>
 
-        <div class="history-total">
-          <span>Total filtrado</span>
-          <strong id="historyTotal">0,00 €</strong>
+        <div class="history-totals">
+          <div><span>Ingresos</span><strong id="historyIncome">0,00 €</strong></div>
+          <div><span>Gastos</span><strong id="historyExpenses">0,00 €</strong></div>
+          <div><span>Saldo</span><strong id="historyBalance">0,00 €</strong></div>
         </div>
 
-        <div id="historyExpenses" class="expense-list"></div>
+        <div id="historyMovements" class="movement-list"></div>
       </section>
 
       <section id="view-settings" class="view" aria-labelledby="settings-title">
         <div class="section-heading">
           <p class="muted">Tus datos</p>
-          <h2 id="settings-title">Copia de seguridad</h2>
+          <h2 id="settings-title">Copias y exportación</h2>
         </div>
 
         <article class="panel settings-panel">
-          <h3>Exportar</h3>
-          <p>Guarda una copia de seguridad o descarga el resumen del mes para abrirlo en Excel.</p>
-          <div class="settings-actions">
-            <button id="exportButton" class="primary-button" type="button">Descargar copia de seguridad</button>
-            <button id="excelButton" class="secondary-button" type="button">Descargar resumen para Excel</button>
-          </div>
+          <h3>Descargar resumen para Excel</h3>
+          <p>Genera un CSV del mes elegido en el resumen, con ingresos, gastos, saldo y todos los movimientos.</p>
+          <button id="excelButton" class="primary-button" type="button">Descargar resumen para Excel</button>
+        </article>
+
+        <article class="panel settings-panel">
+          <h3>Exportar copia completa</h3>
+          <p>Descarga todos tus movimientos en un archivo para conservar una copia.</p>
+          <button id="exportButton" class="secondary-button full-width" type="button">Descargar copia JSON</button>
         </article>
 
         <article class="panel settings-panel">
           <h3>Importar</h3>
-          <p>Restaura una copia creada anteriormente. Los gastos repetidos no se duplicarán.</p>
+          <p>Restaura una copia anterior. Los movimientos repetidos no se duplicarán.</p>
           <label class="file-button">
             Elegir archivo
             <input id="importInput" type="file" accept="application/json,.json" />
@@ -155,34 +172,21 @@
 
         <article class="panel danger-panel">
           <h3>Borrar todos los datos</h3>
-          <p>Esta acción elimina definitivamente los gastos guardados en este dispositivo.</p>
+          <p>Esta acción elimina definitivamente los movimientos guardados en este dispositivo.</p>
           <button id="clearButton" class="danger-button" type="button">Borrar todo</button>
         </article>
       </section>
     </main>
 
     <nav class="bottom-nav" aria-label="Navegación principal">
-      <button class="nav-button active" type="button" data-view="summary">
-        <span>⌂</span>
-        Resumen
-      </button>
-      <button class="nav-button" type="button" data-view="add">
-        <span>＋</span>
-        Añadir
-      </button>
-      <button class="nav-button" type="button" data-view="history">
-        <span>☷</span>
-        Historial
-      </button>
-      <button class="nav-button" type="button" data-view="settings">
-        <span>⚙</span>
-        Copia
-      </button>
+      <button class="nav-button active" type="button" data-view="summary"><span>⌂</span>Resumen</button>
+      <button class="nav-button" type="button" data-view="add"><span>＋</span>Añadir</button>
+      <button class="nav-button" type="button" data-view="history"><span>☷</span>Historial</button>
+      <button class="nav-button" type="button" data-view="settings"><span>⚙</span>Copia</button>
     </nav>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
   </div>
-
   <script src="./app.js"></script>
 </body>
 </html>

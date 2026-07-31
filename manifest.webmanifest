@@ -1,7 +1,7 @@
 {
-  "name": "Mis gastos",
-  "short_name": "Gastos",
-  "description": "Aplicación sencilla para registrar y consultar gastos personales.",
+  "name": "Mis finanzas",
+  "short_name": "Finanzas",
+  "description": "Aplicación sencilla para registrar gastos e ingresos.",
   "lang": "es",
   "start_url": "./",
   "scope": "./",

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f4ef" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Mis gastos" />
+  <meta name="description" content="Aplicación sencilla para registrar y consultar gastos personales." />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <link rel="icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Mis gastos</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">CONTROL PERSONAL</p>
+        <h1>Mis gastos</h1>
+      </div>
+      <button id="quickAddButton" class="icon-button" type="button" aria-label="Añadir gasto">＋</button>
+    </header>
+
+    <main>
+      <section id="view-summary" class="view active" aria-labelledby="summary-title">
+        <div class="month-row">
+          <div>
+            <p class="muted">Resumen del mes</p>
+            <h2 id="summary-title">Este mes</h2>
+          </div>
+          <input id="summaryMonth" class="month-input" type="month" aria-label="Mes del resumen" />
+        </div>
+
+        <article class="total-card">
+          <span>Total gastado</span>
+          <strong id="monthTotal">0,00 €</strong>
+          <small id="expenseCount">Todavía no hay gastos</small>
+        </article>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h3>Por categorías</h3>
+          </div>
+          <div id="categorySummary" class="category-summary"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h3>Últimos gastos</h3>
+            <button class="text-button" type="button" data-go="history">Ver todos</button>
+          </div>
+          <div id="recentExpenses" class="expense-list"></div>
+        </section>
+      </section>
+
+      <section id="view-add" class="view" aria-labelledby="formTitle">
+        <div class="section-heading">
+          <p class="muted">Nuevo movimiento</p>
+          <h2 id="formTitle">Añadir gasto</h2>
+        </div>
+
+        <form id="expenseForm" class="expense-form">
+          <input id="expenseId" type="hidden" />
+
+          <label>
+            Cantidad
+            <div class="amount-field">
+              <input id="amount" type="text" inputmode="decimal" placeholder="0,00" autocomplete="off" required />
+              <span>€</span>
+            </div>
+          </label>
+
+          <label>
+            Categoría
+            <select id="category" required>
+              <option value="Comida">🍽️ Comida</option>
+              <option value="Casa">🏠 Casa</option>
+              <option value="Transporte">🚗 Transporte</option>
+              <option value="Ocio">🎉 Ocio</option>
+              <option value="Compras">🛍️ Compras</option>
+              <option value="Salud">💊 Salud</option>
+              <option value="Otros">📌 Otros</option>
+            </select>
+          </label>
+
+          <label>
+            Fecha
+            <input id="date" type="date" required />
+          </label>
+
+          <label>
+            Descripción <span class="optional">(opcional)</span>
+            <input id="note" type="text" maxlength="80" placeholder="Ej.: compra del supermercado" />
+          </label>
+
+          <button id="saveButton" class="primary-button" type="submit">Guardar gasto</button>
+          <button id="cancelEditButton" class="secondary-button hidden" type="button">Cancelar edición</button>
+        </form>
+      </section>
+
+      <section id="view-history" class="view" aria-labelledby="history-title">
+        <div class="section-heading">
+          <p class="muted">Todos los movimientos</p>
+          <h2 id="history-title">Historial</h2>
+        </div>
+
+        <div class="filters">
+          <input id="historyMonth" type="month" aria-label="Filtrar por mes" />
+          <select id="historyCategory" aria-label="Filtrar por categoría">
+            <option value="">Todas las categorías</option>
+            <option value="Comida">Comida</option>
+            <option value="Casa">Casa</option>
+            <option value="Transporte">Transporte</option>
+            <option value="Ocio">Ocio</option>
+            <option value="Compras">Compras</option>
+            <option value="Salud">Salud</option>
+            <option value="Otros">Otros</option>
+          </select>
+        </div>
+
+        <div class="history-total">
+          <span>Total filtrado</span>
+          <strong id="historyTotal">0,00 €</strong>
+        </div>
+
+        <div id="historyExpenses" class="expense-list"></div>
+      </section>
+
+      <section id="view-settings" class="view" aria-labelledby="settings-title">
+        <div class="section-heading">
+          <p class="muted">Tus datos</p>
+          <h2 id="settings-title">Copia de seguridad</h2>
+        </div>
+
+        <article class="panel settings-panel">
+          <h3>Exportar</h3>
+          <p>Descarga un archivo con todos tus gastos para conservar una copia.</p>
+          <button id="exportButton" class="primary-button" type="button">Descargar copia</button>
+        </article>
+
+        <article class="panel settings-panel">
+          <h3>Importar</h3>
+          <p>Restaura una copia creada anteriormente. Los gastos repetidos no se duplicarán.</p>
+          <label class="file-button">
+            Elegir archivo
+            <input id="importInput" type="file" accept="application/json,.json" />
+          </label>
+        </article>
+
+        <article class="panel danger-panel">
+          <h3>Borrar todos los datos</h3>
+          <p>Esta acción elimina definitivamente los gastos guardados en este dispositivo.</p>
+          <button id="clearButton" class="danger-button" type="button">Borrar todo</button>
+        </article>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegación principal">
+      <button class="nav-button active" type="button" data-view="summary">
+        <span>⌂</span>
+        Resumen
+      </button>
+      <button class="nav-button" type="button" data-view="add">
+        <span>＋</span>
+        Añadir
+      </button>
+      <button class="nav-button" type="button" data-view="history">
+        <span>☷</span>
+        Historial
+      </button>
+      <button class="nav-button" type="button" data-view="settings">
+        <span>⚙</span>
+        Copia
+      </button>
+    </nav>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
